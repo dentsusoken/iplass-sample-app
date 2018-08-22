@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE serviceDefinition>
+<serviceDefinition>
+	<!-- If use oracle, inherits mtp-service-config-mysql.xml for convenience. -->
+	
+	<!-- <inherits>/mtp-core-service-config-oracle.xml</inherits> -->
+	<inherits>/mtp-web-service-config.xml</inherits>
+	<inherits>/gem-service-config.xml</inherits>
+
+	<inherits>/mtp-core-service-config-mysql.xml</inherits>
+
+	<!-- Rdb Connection Settings -->
+	<service>
+		<interface>org.iplass.mtp.impl.rdb.connection.ConnectionFactory</interface>
+		<class>org.iplass.mtp.impl.rdb.connection.DriverManagerConnectionFactory</class>
+		<property name="url" value="jdbc:mysql://[host]:[port]/[schema]" />
+		<property name="user" value="[user]" />
+		<property name="password" value="[password]" />
+		<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+	</service>
+
+	<!-- XmlResource MetaData and Annotation MetaData Settings -->
+	<service>
+		<interface>org.iplass.mtp.impl.metadata.MetaDataRepository</interface>
+		<property name="resourcePath" value="/samples-ec01-ce-metadata.xml" additional="true" />
+		<property name="annotatedClass" value="samples.ec01.command.metadata.CommandList" additional="true"/>
+	</service>
+
+</serviceDefinition>

@@ -1,0 +1,7 @@
+place client library that has no public maven repository here
+
+font library
+---
+http://jikasei.me/font/genshin/
+
+font.jar

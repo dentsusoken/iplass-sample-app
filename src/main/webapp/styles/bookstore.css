@@ -1,0 +1,223 @@
+@charset "UTF-8";
+/*
+ * Copyright (C) 2018 INFORMATION SERVICES INTERNATIONAL - DENTSU, LTD. All Rights Reserved.
+ * 
+ * Unless you have purchased a commercial license,
+ * the following license terms apply:
+ * 
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+html{
+	font-size: 15px;
+}
+body{
+    font-family: Osaka,Verdana,Arial,Helvetica,sans-serif;
+}
+hr {
+    clear: both;
+    border-top: solid #e8e8e8;
+    border-width: 1px 0 0;
+    margin: 30px 0;
+    height: 0;
+}
+.all-breadcrumb {
+    font-size: 0.8rem;
+    background-color:#FFFFFF;
+    padding-left: 0px;
+}
+.all-pagination-list{
+	position: relative;
+    top: 30px;
+}
+.all-price{
+	color:red;
+}
+.all-product-img {
+	height: calc(100vw - 30px);
+}
+@media(min-width:768px){
+	.all-product-img {
+		height: calc(720px / 4 - 30px);
+	}
+}
+@media (min-width: 992px) {
+  .all-product-img {
+    	height: calc(960px / 4 - 30px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .all-product-img {
+    	height: calc(1140px / 4 - 30px);
+  }
+}
+/*layout page*/
+.layout-navbar {
+	justify-content: space-between!important;
+	margin-left : -15px;
+	margin-right : -15px;
+}
+.layout-navbar-text {
+    font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 1rem;
+    line-height: 1.8rem;
+}
+@media(max-width:767.98px) {
+	.layout-container {
+		min-height: calc(100vh - 497px);
+	}
+}
+@media(min-width:768px) {
+	.layout-container {
+		min-height: calc(100vh - 445.5px);
+	}
+}
+.layout-footer {
+    font-size: 0.80rem;
+    line-height: 2rem;
+}
+/*shipping layout page*/
+@media(max-width:767.98px){
+	.shipping-layout-footer {
+		width: 100%;
+		position: absolute;
+		bottom: -4rem;
+	}
+}
+@media(min-width:768px){
+	.shipping-layout-footer {
+		width: 100%;
+		position: absolute;
+		bottom: 0px;
+	}
+}
+/*detail page*/
+.detail-description{
+    font-size: 1rem;
+    line-height: 2rem;
+}
+/*cart page*/
+.cart-table {
+    font-size: 1rem;
+    text-align: right;
+}
+@media(min-width:768px){
+    .cart-table-item{
+        display: flex; 
+        align-items: center;
+    }
+    .cart-table-item p{
+        margin-bottom: 0;
+    }
+}
+@media(max-width:767.98px){
+    .cart-table-item{
+        line-height: 3.5;
+    }
+}
+.cart-table input[type="text"]{
+    width: 50px;
+    text-align: right;
+    border-color: #dee2e6;
+}
+/* custom form */
+@media(max-width:767.98px){
+    .custom-form-left-container{
+        min-height: calc(100vh - 191.5px);
+    }
+}
+@media(min-width:768px){
+	.custom-form-right-container{
+    	min-height: 100vh;
+	}
+    .custom-form-left-container{
+        margin-left: -100%;
+    }
+}
+.custom-form label{
+    font-size: 80%;
+    color: #999999;
+    position: absolute; 
+    top: 0px; 
+    margin-left:0.78rem;
+}
+.custom-form input[type="text"]{
+    height: 3.5rem;
+    line-height: normal;
+    color: #333333;
+}
+.custom-form input[type="password"]{
+    height: 3.5rem;
+    line-height: normal;
+    color: #333333;
+}
+.custom-form .label-visible{
+    opacity: 1
+}
+.custom-form .input-hint-hidden{
+    padding-top: 1.2rem;
+}
+.custom-form .label-hidden{
+    opacity: 0
+}
+.custom-form .input-hint-visible{
+    padding-top:.38rem;
+}
+.custom-cart-table tr td{
+    vertical-align: middle;
+    font-size: .9rem;
+}
+.custom-cart-table p{
+    font-size: .9rem;
+    word-wrap: break-word;
+}
+.custom-cart-table p.cate{
+    font-size: .8rem;
+    color: #999999;
+}
+.custom-cart-table img {
+    width: 64px!important;
+}
+.custom-cart-table span {
+    position: absolute;
+    top: -0.5rem;
+    left: 3.4rem;
+}
+.custom-total-table {
+    text-align: right;
+}
+.memberAgreeContent{
+    overflow: auto;
+    overflow-x: hidden;
+    padding: 10px;
+    height: 350px;
+}
+/*shipping page, shipping confirm page*/
+.shipping-contract-label{
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    margin-top: 0.45rem;
+}
+.shipping-contract-text{
+    font-size: 0.9rem;
+    word-wrap: break-word;
+    margin-top: 0.45rem;
+}
+.shipping-contract-edit{
+    font-size: 0.8rem;
+    position: absolute; 
+    top : 0.75rem;
+    right: -15px;
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE serviceDefinition>
+<serviceDefinition>
+	<!-- 
+	<inherits>/mtp-core-service-config-oracle.xml</inherits>
+	-->
+	<!-- If use mysql, inherits mtp-core-service-config-mysql.xml for convenience. -->
+
+	<inherits>/mtp-core-service-config-mysql.xml</inherits>
+
+	<!-- If use postgresql, inherits mtp-core-service-config-postgre.xml for convenience. -->
+	<!--
+	<inherits>/mtp-core-service-config-postgre.xml</inherits>
+	-->
+	<!-- If use sqlserver, inherits mtp-core-service-config-sqlserver.xml for convenience. -->
+	<!--
+	<inherits>/mtp-core-service-config-sqlserver.xml</inherits>
+	-->
+
+	<inherits>/mtp-web-service-config.xml</inherits>
+	<inherits>/mtp-tools-service-config.xml</inherits>
+	<inherits>/gem-service-config.xml</inherits>
+	<inherits>/adminconsole-service-config.xml</inherits>
+
+	<!-- Web App Settings -->
+	<service>
+		<interface>org.iplass.mtp.impl.web.WebFrontendService</interface>
+
+		<!-- ■ your error url selector ■ -->
+		<property name="errorUrlSelector" class="samples.ec01.web.EcErrorUrlSelector" />
+	</service>
+
+	<!-- Rdb Connection Settings -->
+	<service>
+		<interface>org.iplass.mtp.impl.rdb.connection.ConnectionFactory</interface>
+
+		<!-- DataSource base ConnectionFactory -->
+		<class>org.iplass.mtp.impl.rdb.connection.DataSourceConnectionFactory</class>
+		<property name="dataSourceName" value="java:comp/env/jdbc/iplass" />
+
+
+		<!-- if sql execution exceeds this milliseconds, log sql by warn level.(0 means no log by warn level) -->
+		<property name="warnLogThreshold" value="0" />
+
+		<!-- If change transaction isolation level on create connection, set below. -->
+		<!--
+		<property name="transactionIsolationLevel" value="READ_COMMITTED" />
+		 -->
+
+	</service>
+
+	<!-- XmlResource MetaData and Annotation MetaData Settings -->
+	<service>
+		<interface>org.iplass.mtp.impl.metadata.MetaDataRepository</interface>
+
+		<!-- ■ your app metadata xml file name (additional="true) ■ -->
+		<property name="resourcePath" value="/samples-ec01-ce-metadata.xml" additional="true" />
+
+		<!-- ■ your app command list class (additional="true) ■ -->
+		<property name="annotatedClass" value="samples.ec01.command.metadata.CommandList" additional="true"/>
+
+	</service>
+
+	<!-- Fulltext Search Service Settings -->
+	<service>
+		<interface>org.iplass.mtp.impl.fulltextsearch.FulltextSearchService</interface>
+		<property name="useFulltextSearch" value="false" />
+		<property name="maxRows" value="1000" />
+		<property name="throwExceptionWhenOverLimit" value="true"/>
+
+		<!-- lucene利用 -->
+		<class>org.iplass.mtp.impl.fulltextsearch.FulltextSearchLuceneService</class>
+		<property name="directory" value="[set your lucene index file store path. eg: D:\tmp\lucene]" />
+		<property name="analyzer" value="org.apache.lucene.analysis.ja.JapaneseAnalyzer" />
+		<property name="indexWriterRAMBufferSizeMB" value="64.0"/>
+		<property name="redundantTimeMinutes" value="10"/>
+	</service>
+
+</serviceDefinition>

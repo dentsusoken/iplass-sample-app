@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <web-app
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0"
+	metadata-complete="false">
+
+	<!-- [change to your app name] -->
+	<display-name>mtp</display-name>
+
+	<!-- iPLAss web-fragment setting -->
+	<absolute-ordering>
+		<name>mtp</name>
+		<name>mtp_admin</name>
+	</absolute-ordering>
+
+	<!--
+	===========================================
+	iPLAss configuration
+	===========================================
+	-->
+	<context-param>
+    	<param-name>mtp.config</param-name>
+    	<param-value>/mtp-service-config.xml</param-value>
+	</context-param>
+
+	<!-- JAX-RS Runtime(Jersey) Servlet -->
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>org.iplass.mtp.impl.webapi.rest.MtpApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>60</session-timeout>
+	</session-config>
+
+	<!--
+	===========================================
+	DataSource configuration
+	===========================================
+	-->
+	<resource-ref>
+	    <description>DB Connection</description>
+	    <res-ref-name>jdbc/iplass</res-ref-name>
+	    <res-type>javax.sql.DataSource</res-type>
+	    <res-auth>Container</res-auth>
+	</resource-ref>
+
+	<!-- map error page if necessary -->
+	<!--
+	<error-page>
+		<error-code>403</error-code>
+		<location>/errorhtml/403.html</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/errorhtml/404.html</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>503</error-code>
+		<location>/errorhtml/503.html</location>
+	</error-page>
+	<error-page>
+		<error-code>301</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>302</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>303</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>304</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>305</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>307</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>400</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>401</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>402</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>405</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>406</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>407</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>408</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>409</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>410</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>411</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>412</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>413</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>414</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>415</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>416</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>417</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>501</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>502</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>504</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	<error-page>
+		<error-code>505</error-code>
+		<location>/errorhtml/500.html</location>
+	</error-page>
+	-->
+
+</web-app>

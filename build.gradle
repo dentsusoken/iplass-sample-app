@@ -1,0 +1,125 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse-wtp'
+
+repositories {
+	jcenter()
+	mavenCentral()
+
+	maven {
+		// for jasper reports
+		url 'http://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/'
+	}
+
+	if (project.hasProperty('iPLAssMavenRepoUrl')) {
+		maven {
+			url iPLAssMavenRepoUrl
+		}
+	}
+}
+
+dependencies {
+	compile group: 'org.iplass', name: 'iplass-core', version: iPLAssVersion
+	compile group: 'org.iplass', name: 'iplass-gem', version: iPLAssVersion
+	compile group: 'org.iplass', name: 'iplass-web', version: iPLAssVersion
+
+	runtime group: 'org.iplass', name: 'iplass-admin', version: iPLAssVersion
+	runtime group: 'org.iplass', name: 'iplass-tools', version: iPLAssVersion
+	providedRuntime group: 'org.iplass', name: 'iplass-tools-batch', version: iPLAssVersion, transitive: false
+
+	// Infinispanを利用する場合は以下のコメントアウトを外してください。
+//	runtime group: 'org.iplass', name: 'iplass-infinispan', version: iPLAssVersion
+
+	//provided JavaEE7 apis
+	//Servlet
+	compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+	//JSP
+	compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.2-b02'
+	//Expression Language
+	compileOnly 'javax.el:javax.el-api:3.0.1-b04'
+	//jstl
+	compileOnly 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
+	//for jstl tld file resolve
+	compileOnly group: 'org.glassfish.web', name: 'javax.servlet.jsp.jstl', version: '1.2.3', transitive : false
+	//JAX-RS
+	compileOnly 'javax.ws.rs:javax.ws.rs-api:2.0.1'
+	//Common Annotations for the Java Platform
+	compileOnly 'javax.annotation:javax.annotation-api:1.2'
+	//java mail
+	compileOnly 'javax.mail:javax.mail-api:1.5.6'
+	//Bean validation
+	compileOnly group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+
+	//if your app server is tomcat 8.5, use this
+	//jstl runtime
+	runtime 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
+	runtime(group: 'org.glassfish.web', name: 'javax.servlet.jsp.jstl', version: '1.2.3') {
+		//use javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api
+		exclude(group: 'javax.servlet.jsp.jstl', module: 'jstl-api')
+	}
+
+	//java mail runtime
+	runtime (group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6') {
+		//JavaBeans (TM) Activation Framework is excluded because it contains standard with Java8.
+		exclude(group: 'javax.activation', module: 'activation')
+	}
+
+	//Bean validation runtime
+	runtime group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+	runtime group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'
+	runtime group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b08'
+	
+	//JAX-RS runtime
+	runtime group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25.1'
+	runtime group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.25.1'
+	runtime group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.25.1'
+	runtime group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.8.9'
+
+	testCompile 'junit:junit:4.12'
+
+	testCompile group: 'org.iplass', name: 'iplass-test', version: iPLAssVersion
+
+	providedRuntime 'mysql:mysql-connector-java:8.0.11'
+}
+
+eclipse {
+	project {
+
+		natures 'org.eclipse.jdt.core.javanature',
+			'org.eclipse.wst.common.project.facet.core.nature',
+			'org.eclipse.wst.common.modulecore.ModuleCoreNature',
+			'org.eclipse.jem.workbench.JavaEMFNature',
+			'org.eclipse.buildship.core.gradleprojectnature'
+	}
+
+	wtp {
+
+		facet {
+			facets = []
+			facet name: 'jst.java', version: '1.8'
+			facet name: 'jst.web', version: '3.1'
+			facet name: 'wst.jsdt.web', version: '1.0'
+
+			//set Runtime to tocat v8.5
+			file {
+				withXml {
+					it.asNode().appendNode('runtime', [name: 'Apache Tomcat v8.5'])
+				}
+			}
+		}
+
+		component {
+			contextPath  = 'mtp'
+		}
+	}
+}
+
+tasks.withType(AbstractCompile) {
+	options.encoding = 'UTF-8'
+}
+
+// テナント作成ツール実行
+task runTenantBatch(type: JavaExec, group: 'application', description : 'execute tenant batch.') {
+	main = "org.iplass.mtp.tools.batch.tenant.TenantBatch"
+	classpath = sourceSets.main.runtimeClasspath
+}
