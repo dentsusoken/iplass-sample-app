@@ -49,6 +49,12 @@ dependencies {
 	compileOnly 'javax.mail:javax.mail-api:1.5.6'
 	//Bean validation
 	compileOnly group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+	
+	//javax activation for java11
+	compileOnly group: 'javax.activation', name: 'activation', version: '1.1.1'
+
+	//JAXB for java11
+	compileOnly group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
 
 	//if your app server is tomcat 8.5, use this
 	//jstl runtime
@@ -59,10 +65,7 @@ dependencies {
 	}
 
 	//java mail runtime
-	runtime (group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6') {
-		//JavaBeans (TM) Activation Framework is excluded because it contains standard with Java8.
-		exclude(group: 'javax.activation', module: 'activation')
-	}
+	runtime group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6'
 
 	//Bean validation runtime
 	runtime group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
@@ -74,6 +77,11 @@ dependencies {
 	runtime group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.25.1'
 	runtime group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.25.1'
 	runtime group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.8.9'
+	
+	//JAXB runtime for java11
+	runtime group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+	runtime group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
+	runtime group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.0.1'
 
 	testCompile 'junit:junit:4.12'
 
