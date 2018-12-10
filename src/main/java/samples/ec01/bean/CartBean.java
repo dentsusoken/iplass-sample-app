@@ -30,24 +30,27 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.iplass.mtp.web.template.TemplateUtil;
 
 import samples.ec01.utils.Consts;
 
 public class CartBean implements Serializable {
-	private static final long serialVersionUID = 8770008117231095046L;
+	private static final long serialVersionUID = -8290391646651547123L;
 
 	@Valid
 	private List<CartItem> cartItems = new ArrayList<CartItem>();
 	private long totalPrice = 0;
+	private String lang;
 
 	// コンストラクタ
 	public CartBean() {
+		this.lang = TemplateUtil.getLanguage() == null ? Consts.LANGUAGE_JA : TemplateUtil.getLanguage();
 	}
 
 	// カートに商品を追加
 	synchronized public void addCartItem(String productId, long price) {
+		resetIfLanguageChanged(this);
 		for (CartItem item : this.cartItems) {
-
 			// 商品が既に追加されていたらValueを１増加
 			if (item.getProductId().equals(productId)) {
 				item.setValue(item.getValue() + 1);
@@ -55,7 +58,6 @@ public class CartBean implements Serializable {
 				return;
 			}
 		}
-
 		// 商品が無かった場合には初期値１が入ったCartItemを追加
 		this.cartItems.add(new CartItem(productId));
 		totalPrice += price;
@@ -63,6 +65,7 @@ public class CartBean implements Serializable {
 
 	// カートの商品を削除
 	synchronized public void removeCartItem(String productId, long price) {
+		resetIfLanguageChanged(this);
 		for (int index = 0; index < this.cartItems.size(); index++) {
 			CartItem item = this.cartItems.get(index);
 			if (item.getProductId().equals(productId)) {
@@ -75,6 +78,7 @@ public class CartBean implements Serializable {
 
 	// カートの総額値段を再計算
 	synchronized public void recaculate(Map<String, Long> prices) {
+		resetIfLanguageChanged(this);
 		totalPrice = 0;
 		for (int index = 0; index < this.cartItems.size(); index++) {
 			CartItem cartItem = this.cartItems.get(index);
@@ -92,20 +96,24 @@ public class CartBean implements Serializable {
 
 	// カートの商品数を返却
 	public int getCartSize() {
+		resetIfLanguageChanged(this);
 		return this.cartItems.size();
 	}
 
 	public List<CartItem> getCartItems() {
+		resetIfLanguageChanged(this);
 		return this.cartItems;
 	}
 
 	// カートの総額値段を返却
 	public long getTotalPrice() {
+		resetIfLanguageChanged(this);
 		return totalPrice;
 	}
 
 	// カートの総個数を返却
 	public long getTotalAmount() {
+		resetIfLanguageChanged(this);
 		long totalAmount = 0;
 		for (CartItem item : this.cartItems) {
 			totalAmount = totalAmount + item.getValue();
@@ -115,12 +123,26 @@ public class CartBean implements Serializable {
 	
 	// カートに入れた商品のoidリストを返却
 	public List<String> getProductIds() {
+		resetIfLanguageChanged(this);
 		List<String> productIds = this.cartItems.stream()
 				.map(item -> item.productId)
 				.collect(Collectors.toList());
 		return productIds;
 	}
 	
+	// 画面で表示する言語が変更されたら、カートをリセットする。
+	private static void resetIfLanguageChanged(CartBean cart) {
+		if (cart == null) return;
+		String lang = TemplateUtil.getLanguage() == null ? Consts.LANGUAGE_JA : TemplateUtil.getLanguage();
+		if (!cart.lang.equals(lang)) {
+			synchronized(cart) {
+				cart.cartItems.removeIf(ci -> { return true; });
+				cart.totalPrice = 0;
+				cart.lang = lang;
+			}
+		}
+	}
+
 	public static class CartItem implements Serializable {
 		private static final long serialVersionUID = 2730845929449301628L;
 

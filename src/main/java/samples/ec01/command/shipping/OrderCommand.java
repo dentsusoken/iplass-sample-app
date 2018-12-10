@@ -52,6 +52,7 @@ import samples.ec01.utils.Consts;
 		name = "samples/ec01/shipping/doOrder", 
 		displayName = "注文処理", 
 		privilaged = true, 
+		synchronizeOnSession = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 
 				consume = true, 
