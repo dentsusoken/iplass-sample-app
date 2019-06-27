@@ -5,11 +5,11 @@ The sample application for iPLAss.
 
 For the abstract of this sample application, please refer to the following document.
 
-<https://iplass.org/docs/sample/>
+<https://iplass.org/docs/sample/> _(English version is under constuction)_
 
 For the steps to run the sample project, please refer to the following document.
 
-<https://iplass.org/docs/sample/javajsp/>
+<https://iplass.org/docs/sample/javajsp/> _(English version is under constuction)_
 
 ## Related repositories
 
