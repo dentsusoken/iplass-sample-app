@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!DOCTYPE serviceDefinition>
 <serviceDefinition>
-	<!-- 
+	<!--
 	<inherits>/mtp-core-service-config-oracle.xml</inherits>
 	-->
 	<!-- If use mysql, inherits mtp-core-service-config-mysql.xml for convenience. -->
@@ -34,10 +34,60 @@
 	<service>
 		<interface>org.iplass.mtp.impl.rdb.connection.ConnectionFactory</interface>
 
-		<!-- DataSource base ConnectionFactory -->
+		<!-- DataSource base ConnectionFactory (for via JNDI) -->
 		<class>org.iplass.mtp.impl.rdb.connection.DataSourceConnectionFactory</class>
 		<property name="dataSourceName" value="java:comp/env/jdbc/iplass" />
 
+		<!-- DataSource base ConnectionFactory (for direct generation) -->
+		<!-- The following settings are an example using HikariCP and MySQL. -->
+		<!--
+		<class>org.iplass.mtp.impl.rdb.connection.DataSourceConnectionFactory</class>
+		<property name="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+			<property name="jdbcUrl" value="jdbc:mysql://server:3306/mtdb" />
+			<property name="username" value="XXXXX" />
+			<property name="password" value="XXXXX" />
+			<property name="dataSourceProperties">
+				<property name="serverTimezone" value="JST" />
+			</property>
+		</property>
+		-->
+
+		<!-- DriverManager base ConnectionFactory -->
+		<!--
+		<class>org.iplass.mtp.impl.rdb.connection.DriverManagerConnectionFactory</class>
+		-->
+
+		<!-- for oracle -->
+		<!--
+		<property name="url" value="jdbc:oracle:thin:ADDRESS:PORT:DB" />
+		<property name="user" value="XXXXX" />
+		<property name="password" value="XXXXX" />
+		<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
+		-->
+
+		<!-- for mysql -->
+		<!--
+		<property name="url" value="jdbc:mysql://ADDRESS:PORT/DB" />
+		<property name="user" value="XXXXX" />
+		<property name="password" value="XXXXX" />
+		<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+		-->
+
+		<!-- for postgresql -->
+		<!--
+		<property name="url" value="jdbc:postgresql://ADDRESS:PORT/DB" />
+		<property name="user" value="XXXXX" />
+		<property name="password" value="XXXXX" />
+		<property name="driver" value="org.postgresql.Driver" />
+		-->
+
+		<!-- for sqlserver -->
+		<!--
+		<property name="url" value="jdbc:sqlserver://ADDRESS:PORT;databaseName=DB" />
+		<property name="user" value="XXXXX" />
+		<property name="password" value="XXXXX" />
+		<property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		-->
 
 		<!-- if sql execution exceeds this milliseconds, log sql by warn level.(0 means no log by warn level) -->
 		<property name="warnLogThreshold" value="0" />
