@@ -3027,6 +3027,14 @@
     <metaData xsi:type="metaHtmlTemplate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <displayName>管理画面トップ</displayName>
         <id>322b11ac-30b5-41b0-9a8e-fff94edf41c1</id>
+        <localizedDisplayNameList>
+            <localeName>ja</localeName>
+            <stringValue>管理画面トップ</stringValue>
+        </localizedDisplayNameList>
+        <localizedDisplayNameList>
+            <localeName>en</localeName>
+            <stringValue>Management Page Top</stringValue>
+        </localizedDisplayNameList>
         <name>samples/ec01/backoffice/top</name>
         <useContentDisposition>false</useContentDisposition>
         <localizedSourceList>
@@ -3064,6 +3072,14 @@
     <metaData xsi:type="metaCalendar" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
         <displayName>配送状況</displayName>
         <id>0cfbde7a-1d37-4c3a-8021-c76ce722354e</id>
+        <localizedDisplayNameList>
+            <localeName>ja</localeName>
+            <stringValue>配送状況</stringValue>
+        </localizedDisplayNameList>
+        <localizedDisplayNameList>
+            <localeName>en</localeName>
+            <stringValue>Delivery Status</stringValue>
+        </localizedDisplayNameList>
         <name>samples/ec01/deliveryStatus</name>
         <type>Week</type>
         <items>
@@ -9748,16 +9764,40 @@ var oid = $(":hidden[name='oid']").val();
         <colModel>
             <name>category</name>
             <displayLabel>カテゴリ</displayLabel>
+            <localizedDisplayLabelList>
+                <localeName>ja</localeName>
+                <stringValue>カテゴリ</stringValue>
+            </localizedDisplayLabelList>
+            <localizedDisplayLabelList>
+                <localeName>en</localeName>
+                <stringValue>Category</stringValue>
+            </localizedDisplayLabelList>
             <align></align>
         </colModel>
         <colModel>
             <name>saleStatus</name>
             <displayLabel>販売ステータス</displayLabel>
+            <localizedDisplayLabelList>
+                <localeName>ja</localeName>
+                <stringValue>販売ステータス</stringValue>
+            </localizedDisplayLabelList>
+            <localizedDisplayLabelList>
+                <localeName>en</localeName>
+                <stringValue>Sale Status</stringValue>
+            </localizedDisplayLabelList>
             <align></align>
         </colModel>
         <colModel>
             <name>stockCnt</name>
             <displayLabel>在庫数</displayLabel>
+            <localizedDisplayLabelList>
+                <localeName>ja</localeName>
+                <stringValue>在庫数</stringValue>
+            </localizedDisplayLabelList>
+            <localizedDisplayLabelList>
+                <localeName>en</localeName>
+                <stringValue>Stock</stringValue>
+            </localizedDisplayLabelList>
             <width>80</width>
             <align>right</align>
         </colModel>
