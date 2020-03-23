@@ -35,16 +35,16 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home'))}
             </a>
             <span class="breadcrumb-item active" >
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.title')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.title'))}
             </span>
         </nav>
     </div>
     <div class="col-12">
         <span class="h4">
-        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.title')}" />
+        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.title'))}
         </span>
         <div class="mt-3">
             <div class="alert alert-danger" role="alert">
@@ -55,26 +55,26 @@
 						e = (Exception) request.getAttribute(WebRequestConstants.EXCEPTION);
 					}
 					if (e instanceof LoginFailedException){ %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.loginFailed.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.loginFailed.msg'))}
 					<% } else if (e instanceof UserExistsException) { %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.userExists.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.userExists.msg'))}
 					<% } else if (e instanceof TokenValidationException) { %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.token.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.token.msg'))}
 					<% } else if (e instanceof EntityValidationException) { %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.entityValidation.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.entityValidation.msg'))}
 					<% } else if (e instanceof SessionValueNotFoundException) { %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.sessionValueNotFound.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.sessionValueNotFound.msg'))}
 					<% } else if (e instanceof EntityDataNotFoundException) { %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.entityDataNotFound.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.entityDataNotFound.msg'))}
 					<% } else { %>
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.system.msg')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.system.msg'))}
 					<% } %>
                     </strong>
                 </p>
             </div>
         </div>
         <div class="col-12 mt-5 text-center">
-            <a class="btn btn-dark" href="${m:tcPath()}/samples/ec01/top"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.error.return')}" /></a>
+            <a class="btn btn-dark" href="${m:tcPath()}/samples/ec01/top">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.error.return'))} </a>
         </div>
     </div>
 </div>

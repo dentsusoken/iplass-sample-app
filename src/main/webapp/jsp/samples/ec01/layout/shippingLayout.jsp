@@ -46,17 +46,17 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-block d-md-none pt-5">
-                <p class="h4"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.title')}" /></p>
+                <p class="h4">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.title'))} </p>
             </div>
             <div class="col-12 d-block d-md-none bg-light pt-3 pr-4 clearfix">
                 <button id="toggle-btn" class="border-0 bg-transparent float-left" type="button" data-toggle="collapse" data-target="#cartTab"
                     aria-controls="cartTab" aria-expanded="false" aria-label="Toggle">
                     <span class="oi oi-cart"></span>
-                    <c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.viewCart')}" />
+                    ${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.viewCart'))}
                     <span class="oi oi-caret-bottom"></span>
                 </button>
                 <p class="float-right">
-                	<c:out value="${cartBean.totalPrice}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+                	${m:esc(cartBean.totalPrice)}	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))}
                 </p>
             </div>
             <div class="col-12 col-md-6 bg-light collapse d-md-block offset-md-6 pt-md-5 custom-form-right-container" id="cartTab">
@@ -69,15 +69,15 @@
                                 <td scope="row">
                                     <div style="width:80px; position:relative">
                                         <img src="${URLHelper.getProductImageResource(product, Product.PRODUCT_IMG)}" class="rounded" alt="${product.name}" />
-                                        <span class="badge badge-dark badge-pill"><c:out value="${it.value}" /></span>
+                                        <span class="badge badge-dark badge-pill">${m:esc(it.value)} </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <p><c:out value="${product.name}" /></p>
-                                    <p class="cate"><c:out value="${product.category.name}" /></p>
+                                    <p>${m:esc(product.name)} </p>
+                                    <p class="cate">${m:esc(product.category.name)} </p>
                                 </td>
                                 <td class="w-25 text-right">
-                                	<c:out value="${product.price*it.value}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+                                	${m:esc(product.price*it.value)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))}
                                 </td>
                             </tr>
                         </c:forEach>
@@ -90,24 +90,24 @@
                         	<!-- 商品合計 -->
                             <tr>
                                 <td scope="row" class="w-25 text-left">
-                                	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.subtotal')}" />
+                                	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.subtotal'))}
                                 </td>
                                 <td class="w-75">
-                                    <c:out value="${cartBean.totalPrice}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+                                    ${m:esc(cartBean.totalPrice)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))}
                                 </td>
                             </tr>
                             <tr>
                                 <td scope="row" class="w-25 text-left border-top-0">
-                                	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.fee')}" />
+                                	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.fee'))}
                                 </td>
                                 <td class="w-75 border-top-0">--</td>
                             </tr>
                             <tr>
                                 <td scope="row" class="w-25 text-left h4">
-                                	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.total')}" />
+                                	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.total'))}
                                 </td>
                                 <td class="w-75 font-weight-bold h4">
-                                    <c:out value="${cartBean.totalPrice}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+                                    ${m:esc(cartBean.totalPrice)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))}
                                 </td>
                             </tr>
                         </tbody>

@@ -34,10 +34,10 @@
 	        </a>
 	        <div class="card-body pt-md-1 text-center">
 	            <div>
-	                <a href="${URLHelper.getProductDetailPath(product.oid)}" class="card-link text-dark"><c:out value="${product.name}" /></a>
+	                <a href="${URLHelper.getProductDetailPath(product.oid)}" class="card-link text-dark">${m:esc(product.name)} </a>
 	            </div>
 	            <div class="all-price">
-	                <c:out value="${product.price}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+	                ${m:esc(product.price)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))}
 	            </div>
 	        </div>
 	    </div>

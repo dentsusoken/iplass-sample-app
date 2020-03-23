@@ -28,31 +28,31 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home'))}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.search.title')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.search.title'))}
             </span>
         </nav>
     </div>
 </div>
 <div class="row" id="searchResultDiv">
     <div class="col-12">
-        <h4><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.search.title')}" /></h4>
+        <h4>${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.search.title'))} </h4>
         <div class="input-group col-12">
             <input type="text" class="form-control" id="productName" placeholder="Search for...">
             <div class="dropdown float-right">
 				<button class="btn btn-outline-dark dropdown-toggle" type="button" id="categoryList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" category-item-selected="all">
-					<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.title')}"/>
+					${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.product.category.title'))}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="categoryList">
 					<a class="dropdown-item" href="javascript:void(0);" onclick="dropdownSelect(this);" category-item-value="all">
-						<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all')}" />
+						${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all'))}
 					</a>
 					<div class="dropdown-divider"></div>
 					<c:forEach var="c" items="${categoryList}">
 						<a class="dropdown-item" href="javascript:void(0);" onclick="dropdownSelect(this);" category-item-value="${c.oid}">
-							<c:out value="${c.name}"/>
+							${m:esc(c.name)}
 						</a>
 					</c:forEach>
 				</div>

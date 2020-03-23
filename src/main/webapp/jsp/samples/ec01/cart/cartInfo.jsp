@@ -31,27 +31,27 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home'))}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.title')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.title'))}
             </span>
         </nav>
     </div>
 </div>
 <%
 	CartBean cartBean = (CartBean)request.getSession().getAttribute(Consts.CART_BEAN_SESSION_KEY);
-	if( cartBean == null || cartBean.getCartItems().size() == 0) { 
+	if( cartBean == null || cartBean.getCartItems().size() == 0) {
 %>
 <div class="row cart-table">
 	<div class="col-12 text-left">
 		<p>
-			<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p1')}" />
+			${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p1'))}
 		</p>
 		<p>
-			<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p2')}" />
+			${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p2'))}
 			<a class="text-dark" href="${m:tcPath()}/samples/ec01/top">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p3')}" />
+				${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p3'))}
 			</a>
 		</p>
 	</div>
@@ -61,11 +61,11 @@
 	<div class="row cart-table">
 	    <div class="col-12 d-none d-md-block">
 	        <div class="row">
-	            <div class="col-md-3 font-weight-bold text-center"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.product')}" /></div>
+	            <div class="col-md-3 font-weight-bold text-center">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.product'))} </div>
 	            <div class="col-md-3 font-weight-bold"></div>
-	            <div class="col-md-2 font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price')}" /></div>
-	            <div class="col-md-2 font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity')}" /></div>
-	            <div class="col-md-2 font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.subtotal')}" /></div>
+	            <div class="col-md-2 font-weight-bold">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price'))} </div>
+	            <div class="col-md-2 font-weight-bold">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity'))} </div>
+	            <div class="col-md-2 font-weight-bold">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.subtotal'))} </div>
 	        </div>
 	    </div>
 	    <div class="col-12">
@@ -83,22 +83,22 @@
 			            </div>
 			            <div class="col-12 col-md-3 text-center text-md-left cart-table-item">
 			                <div class="w-100">
-			                    <h6><c:out value="${product.name}" /></h6>
+			                    <h6>${m:esc(product.name)} </h6>
 			                    <p>
 			                        <a class="text-dark" href="${URLHelper.getDeleteCartInfoPath(it.productId)}" role="button">
-			                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.remove')}" />
+			                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.remove'))}
 			                        </a>
 			                    </p>
 			                </div>
 			            </div>
 			            <div class="col-3 d-block d-md-none cart-table-item">
-			                <p class="w-100 font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price')}" /></p>
+			                <p class="w-100 font-weight-bold">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price'))} </p>
 			            </div>
 			            <div class="col-8 col-md-2 cart-table-item">
-			                <p class="w-100"><c:out value="${product.price}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" /></p>
+			                <p class="w-100">${m:esc(product.price)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))} </p>
 			            </div>
 			            <div class="col-3 d-block d-md-none cart-table-item">
-			                <p class="w-100 font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity')}" /></p>
+			                <p class="w-100 font-weight-bold">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity'))} </p>
 			            </div>
 			            <div class="col-8 col-md-2 cart-table-item clearfix">
 			            	<m:bind prop="cartItems[${stat.index}].value">
@@ -111,10 +111,10 @@
 			                </m:bind>
 			            </div>
 			            <div class="col-3 d-block d-md-none cart-table-item">
-			                <p class="w-100 font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total')}" /></p>
+			                <p class="w-100 font-weight-bold">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total'))} </p>
 			            </div>
 			            <div class="col-8 col-md-2 cart-table-item">
-			                <p class="w-100"><c:out value="${product.price * it.value}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" /></p>
+			                <p class="w-100">${m:esc(product.price * it.value)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))} </p>
 			            </div>
 			        </div>
 			        <hr class="mb-3">
@@ -125,14 +125,14 @@
 	<div class="row mt-3">
 	    <div class="col-md-12 text-center text-md-right">
 	        <p class="font-weight-bold">
-	        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total')}" />：&nbsp;
-	        	<c:out value="${cartBean.totalPrice}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+	        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total'))} ：&nbsp;
+	        	${m:esc(cartBean.totalPrice)}${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.yen'))}
 	        </p>
 	        <button type="button" class="btn btn-outline-dark" onclick="updateCart();return false;">
 	            <span class="oi oi-reload" title="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.refresh')}" aria-hidden="true" />
 	        </button>
 	        <a class="btn btn-outline-dark" href="${m:tcPath()}/samples/ec01/top" role="button">
-	        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.return')}" />
+	        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.return'))}
 	        </a>
 	    </div>
 	</div>
@@ -140,7 +140,7 @@
 <div class="row mt-3">
     <div class="col-md-12 text-center text-md-right">
         <a class="btn btn-dark btn-lg" href="${m:tcPath()}/samples/ec01/member/login" role="button">
-        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.checkOut')}" />
+        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.checkOut'))}
         </a>
     </div>
 </div>
@@ -153,7 +153,7 @@ function updateCart() {
         	err = true;
         }
     });
-    if(err){ 
+    if(err){
         alert("${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.notNum')}");
     	return false;
     }

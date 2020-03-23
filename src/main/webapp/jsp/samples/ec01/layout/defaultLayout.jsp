@@ -42,7 +42,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/bootstrap.min.css?cv=<%=TemplateUtil.getAPIVersion()%>">
     <link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/open-iconic-bootstrap.min.css?cv=<%=TemplateUtil.getAPIVersion()%>">
-    <link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/bookstore.css?cv=<%=TemplateUtil.getAPIVersion()%>">   
+    <link rel="stylesheet" href="${m:esc(staticContentPath)}/styles/bookstore.css?cv=<%=TemplateUtil.getAPIVersion()%>">
 </head>
 
 <body>
@@ -74,7 +74,7 @@
                                 <a class="btn btn-lg text-dark" href="${m:tcPath()}/samples/ec01/cart/cartInfo">
                                     <span class="oi oi-cart"></span>
                                         ${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.cart')}
-                                    <span cart-data="totalAmount">(<c:out value="${totalAmount}"/>)</span>
+                                    <span cart-data="totalAmount">(${m:esc(totalAmount)} )</span>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -90,7 +90,7 @@
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
                                 <a class="btn btn-lg text-dark" href="${m:tcPath()}/samples/ec01/cart/cartInfo">
-                                    <span class="oi oi-cart"></span><span cart-data="totalAmount">(<c:out value="${totalAmount}"/>)</span>
+                                    <span class="oi oi-cart"></span><span cart-data="totalAmount">(${m:esc(totalAmount)} )</span>
                                 </a>
                             </li>
                         </ul>
@@ -118,7 +118,7 @@
                                 <a class="nav-link text-dark font-weight-bold" href="${m:tcPath()}/samples/ec01/top">${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.home')}</a>
                             </li>
                             <li class="list-group-item border-0">
-                            	<a class="nav-link text-dark" href="${URLHelper.getCategoryPath('all')}"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all')}" /></a>
+                            	<a class="nav-link text-dark" href="${URLHelper.getCategoryPath('all')}">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all'))} </a>
                             </li>
 							<c:forEach var="category" items="${categoryList}">
 								<li class="list-group-item border-0">
@@ -154,16 +154,16 @@
                 <ul class="list-group">
                     <li class="list-group-item border-0 font-weight-bold">Links</li>
                     <li class="list-group-item border-0">
-                        <a href="${m:tcPath()}/samples/ec01/news/newInfo" class="text-dark"><c:out value="${m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.news')}" /></a>
+                        <a href="${m:tcPath()}/samples/ec01/news/newInfo" class="text-dark">${m:esc(m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.news'))} </a>
                     </li>
                     <li class="list-group-item border-0">
-                        <a href="${m:tcPath()}/samples/ec01/search/search" class="text-dark"><c:out value="${m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.search')}" /></a>
+                        <a href="${m:tcPath()}/samples/ec01/search/search" class="text-dark">${m:esc(m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.search'))} </a>
                     </li>
                     <li class="list-group-item border-0">
-                        <a href="${m:tcPath()}/samples/ec01/inquiry/inquiry" class="text-dark"><c:out value="${m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.inquiry')}" /></a>
+                        <a href="${m:tcPath()}/samples/ec01/inquiry/inquiry" class="text-dark">${m:esc(m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.inquiry'))} </a>
                     </li>
                     <li class="list-group-item border-0">
-                        <a href="${m:tcPath()}/samples/ec01/shop/tradeLaw" class="text-dark"><c:out value="${m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.SCTAInfo')}" /></a>
+                        <a href="${m:tcPath()}/samples/ec01/shop/tradeLaw" class="text-dark">${m:esc(m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.SCTAInfo'))} </a>
                     </li>
                 </ul>
             </div>
@@ -172,7 +172,7 @@
             <div class="col-md-12 text-light text-left">Copyright（c）2018 MTP Demo Store all rights reserved.</div>
         </div>
     </div>
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->    
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script type="text/javascript" src="${m:esc(staticContentPath)}/scripts/jquery-3.3.1.min.js?cv=<%=TemplateUtil.getAPIVersion()%>"></script>
     <script type="text/javascript" src="${m:esc(staticContentPath)}/scripts/popper.min.js?cv=<%=TemplateUtil.getAPIVersion()%>"></script>
     <script type="text/javascript" src="${m:esc(staticContentPath)}/scripts/bootstrap.min.js?cv=<%=TemplateUtil.getAPIVersion()%>"></script>

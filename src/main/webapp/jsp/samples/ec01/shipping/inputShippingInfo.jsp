@@ -32,23 +32,23 @@
              <span class="h4"> </span>
              <nav class="breadcrumb all-breadcrumb">
                  <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home'))}
                  </a>
                  <span class="breadcrumb-item active">
-                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.title')}" />
+                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.title'))}
                  </span>
              </nav>
          </div>
          <div class="col-12 col-md-12">
              <h5>
-             	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.title')}" />
+             	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.title'))}
              </h5>
          </div>
          <div class="col-12 col-md-12 mt-3">
              <div>
                  <m:bind prop="mail">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.mail')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.mail'))}
 	                 </label>
                  	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.mail')}">
                  	<small class="form-text text-danger"><m:errors /></small>
@@ -59,7 +59,7 @@
              <div>
                  <m:bind prop="familyName">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.familyName')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.familyName'))}
 	                 </label>
                  	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.familyName')}">
                  	<small class="form-text text-danger"><m:errors /></small>
@@ -70,7 +70,7 @@
              <div>
                  <m:bind prop="firstName">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.firstName')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.firstName'))}
 	                 </label>
                  	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.firstName')}">
                  	<small class="form-text text-danger"><m:errors /></small>
@@ -82,7 +82,7 @@
              <div>
                  <m:bind prop="familyNameKana">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.familyNameKana')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.familyNameKana'))}
 	                 </label>
                  	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.familyNameKana')}">
                  	<small class="form-text text-danger"><m:errors /></small>
@@ -93,7 +93,7 @@
              <div>
                  <m:bind prop="firstNameKana">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.firstNameKana')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.firstNameKana'))}
 	                 </label>
                  	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.firstNameKana')}">
                  	<small class="form-text text-danger"><m:errors /></small>
@@ -105,7 +105,7 @@
              <div>
                  <m:bind prop="address">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.address')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.address'))}
 	                 </label>
 	                 <input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.address')}">
 	                 <small class="form-text text-danger"><m:errors /></small>
@@ -116,7 +116,7 @@
              <div>
                  <m:bind prop="tel">
 	                 <label for="${name}" class="col-form-label label-hidden">
-	                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.tel')}" />
+	                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.tel'))}
 	                 </label>
                  	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.tel')}">
 	                <small class="form-text text-danger"><m:errors /></small>
@@ -126,12 +126,12 @@
          <div class="col-12 mt-4 text-center clearfix">
              <div class="float-md-right">
                  <button type="submit" class="btn btn-dark btn-lg">
-                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.delivery')}" />
+                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.delivery'))}
                  </button>
              </div>
              <div class="text-md-left mt-2">
                  <a class="btn btn-sm" href="${m:tcPath()}/samples/ec01/cart/cartInfo" role="button">&lt;
-                 	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.return')}" />
+                 	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.return'))}
                  </a>
              </div>
          </div>

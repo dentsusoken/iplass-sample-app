@@ -33,15 +33,15 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home'))}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.title')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.title'))}
             </span>
         </nav>
     </div>
     <div class="col-12">
-        <span class="h4"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.title')}" /></span>
+        <span class="h4">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.title'))} </span>
         <form class="custom-form mt-3" action="${m:tcPath()}/samples/ec01/member/confirmMemberInfo" method="post">
         <input type="hidden" name="_t" value="${m:token()}">
         <m:bind bean="${userBean}" mappingResult="${result}">
@@ -50,7 +50,7 @@
                     <div>
                         <m:bind prop="userId">
 	                        <label for="${name}" class="col-form-label label-hidden">
-	                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId')}" />
+	                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId'))}
 	                        </label>
 	                        <input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId')}">
 							<small class="form-text text-danger"><m:errors/></small>
@@ -61,7 +61,7 @@
                     <div>
                         <m:bind prop="familyName">
 	                        <label for="${name}" class="col-form-label label-hidden">
-	                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName')}" />
+	                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName'))}
 	                        </label>
                         	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName')}">
                         	<small class="form-text text-danger"><m:errors/></small>
@@ -72,7 +72,7 @@
                     <div>
                         <m:bind prop="firstName">
 	                        <label for="${name}" class="col-form-label label-hidden">
-	                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName')}" />
+	                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName'))}
 	                        </label>
                         	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName')}">
                         	<small class="form-text text-danger"><m:errors/></small>
@@ -84,7 +84,7 @@
                     <div>
                         <m:bind prop="familyNameKana">
 	                        <label for="${name}" class="col-form-label label-hidden">
-	                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana')}" />
+	                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana'))}
 	                        </label>
                         	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana')}">
                         	<small class="form-text text-danger"><m:errors/></small>
@@ -95,7 +95,7 @@
                     <div>
                         <m:bind prop="firstNameKana">
 	                        <label for="${name}" class="col-form-label label-hidden">
-	                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana')}" />
+	                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana'))}
 	                        </label>
                         	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana')}">
                         	<small class="form-text text-danger"><m:errors/></small>
@@ -107,7 +107,7 @@
                     <div>
                         <m:bind prop="mail">
 	                        <label for="${name}" class="col-form-label label-hidden">
-	                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail')}" />
+	                        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail'))}
 	                        </label>
                         	<input type="text" class="form-control border rounded input-hint-visible" name="${name}" value="${value}" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail')}">
                         	<small class="form-text text-danger"><m:errors/></small>
@@ -121,7 +121,7 @@
             <div class="form-group mt-4">
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-dark">
-                    	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.doRegist')}" />
+                    	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.doRegist'))}
                     </button>
                 </div>
             </div>

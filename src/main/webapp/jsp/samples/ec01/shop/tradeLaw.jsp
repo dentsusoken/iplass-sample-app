@@ -30,27 +30,27 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home'))}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.SCTAInfo')}" />
+            	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.SCTAInfo'))}
             </span>
         </nav>
     </div>
     <div class="col-12">
         <span class="h4">
-        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.SCTAInfo')}" />
+        	${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.SCTAInfo'))}
         </span>
         <div class="form-group mt-3">
             <div class="alert alert-info w-100" role="alert">
                 <p class="mb-0">
                     <strong>
-                        <c:out value="${shopInfo.shopName}" />
+                        ${m:esc(shopInfo.shopName)}
                     </strong>
                 </p>
                 <p class="mb-0">
                     <strong>
-                        <c:out value="${shopInfo.shopNameSub}" />
+                        ${m:esc(shopInfo.shopNameSub)}
                     </strong>
                 </p>
             </div>
@@ -59,137 +59,137 @@
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.dealer')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.dealer'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
-                        	<c:out value="${tradeLaw.dealer}" />
+                        	${m:esc(tradeLaw.dealer)}
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.administrator')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.administrator'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
-                        	<c:out value="${tradeLaw.administrator}" />
+                        	${m:esc(tradeLaw.administrator)}
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.postNo')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.postNo'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
                         	<c:forEach var="s" items="${tradeLaw.postNo}">
-                        		<c:out value="${s}" />&nbsp;
+                        		${m:esc(s)} &nbsp;
                         	</c:forEach>
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.address')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.address'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
                             <c:forEach var="s" items="${tradeLaw.address}">
-                        		<c:out value="${s}" />&nbsp; 
+                        		${m:esc(s)} &nbsp;
                         	</c:forEach>
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.tel')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.tel'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
                             <c:forEach var="s" items="${tradeLaw.tel}">
-                        		<c:out value="${s}" />&nbsp;
+                        		${m:esc(s)} &nbsp;
                         	</c:forEach>
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.fax')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.fax'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
                             <c:forEach var="s" items="${tradeLaw.fax}">
-                        		<c:out value="${s}" />&nbsp;
+                        		${m:esc(s)} &nbsp;
                         	</c:forEach>
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.mail')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.mail'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
-                        	<c:out value="${tradeLaw.mail}" />
+                        	${m:esc(tradeLaw.mail)}
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold"><span class="text-muted">URL</span></div>
                         <div class="col-12 col-md-8">
-                        	<c:out value="${tradeLaw.url}" />
+                        	${m:esc(tradeLaw.url)}
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.feeRequired')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.feeRequired'))}
                         	</span>
                         </div>
-                        <div class="col-12 col-md-8"><c:out value="${tradeLaw.feeRequired}" /></div>
+                        <div class="col-12 col-md-8">${m:esc(tradeLaw.feeRequired)} </div>
                     </div>
                     <div class="row mt-3 border-bottom">
                         <div class="col-12 col-md-4 font-weight-bold">
                         	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.orderingMethod')}" />
-                        	</span>
-                        </div>
-                        <div class="col-12 col-md-8">
-                        	<c:out value="${tradeLaw.howToOrder}" />
-                        </div>
-                    </div>
-                    <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
-                        	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.paymentMethod')}" />
-                        	</span>
-                        </div>
-                        <div class="col-12 col-md-8"><c:out value="${tradeLaw.howToPayment}" /></div>
-                    </div>
-                    <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
-                        	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.paymentDate')}" />
-                        	</span>
-                        </div>
-                        <div class="col-12 col-md-8"><c:out value="${tradeLaw.paymentDeadline}" /></div>
-                    </div>
-                    <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
-                        	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.deliveryTime')}" />
-                        	</span>
-                        </div>
-                        <div class="col-12 col-md-8"><c:out value="${tradeLaw.deliveryTime}" /></div>
-                    </div>
-                    <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
-                        	<span class="text-muted">
-                        		<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.exchanged')}" />
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.orderingMethod'))}
                         	</span>
                         </div>
                         <div class="col-12 col-md-8">
-                        	<c:out value="${tradeLaw.exchanged}" />
+                        	${m:esc(tradeLaw.howToOrder)}
+                        </div>
+                    </div>
+                    <div class="row mt-3 border-bottom">
+                        <div class="col-12 col-md-4 font-weight-bold">
+                        	<span class="text-muted">
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.paymentMethod'))}
+                        	</span>
+                        </div>
+                        <div class="col-12 col-md-8">${m:esc(tradeLaw.howToPayment)} </div>
+                    </div>
+                    <div class="row mt-3 border-bottom">
+                        <div class="col-12 col-md-4 font-weight-bold">
+                        	<span class="text-muted">
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.paymentDate'))}
+                        	</span>
+                        </div>
+                        <div class="col-12 col-md-8">${m:esc(tradeLaw.paymentDeadline)} </div>
+                    </div>
+                    <div class="row mt-3 border-bottom">
+                        <div class="col-12 col-md-4 font-weight-bold">
+                        	<span class="text-muted">
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.deliveryTime'))}
+                        	</span>
+                        </div>
+                        <div class="col-12 col-md-8">${m:esc(tradeLaw.deliveryTime)} </div>
+                    </div>
+                    <div class="row mt-3 border-bottom">
+                        <div class="col-12 col-md-4 font-weight-bold">
+                        	<span class="text-muted">
+                        		${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.exchanged'))}
+                        	</span>
+                        </div>
+                        <div class="col-12 col-md-8">
+                        	${m:esc(tradeLaw.exchanged)}
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
         </div>
         <div class="mt-5">
 	      <div class="col-12 mt-5 text-center">
-	        <a class="btn btn-dark" href="${m:tcPath()}/samples/ec01/top"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.back')}" /></a>
+	        <a class="btn btn-dark" href="${m:tcPath()}/samples/ec01/top">${m:esc(m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.back'))} </a>
 	      </div>
         </div>
     </div>
