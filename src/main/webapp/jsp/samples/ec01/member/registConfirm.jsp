@@ -29,19 +29,19 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
             </a>
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/member/inputMemberInfo">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.title')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.title')}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.title')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.title')}
             </span>
         </nav>
     </div>
     <div class="col-12">
         <span class="h4">
-        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.confirmRegist.title')}" />
+        	${m:rs('iplass-wtp-messages', 'samples.ec01.confirmRegist.title')}
         </span>
         <form class="custome-confirm-form mt-3" action="${m:tcPath()}/samples/ec01/member/registMemberInfo" method="post">
         <input type="hidden" name="_t" value="${m:token()}">
@@ -49,12 +49,12 @@
                 <div class="alert alert-info w-100" role="alert">
                     <p class="mb-0">
                         <strong>
-                            <c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.registMsg.p1')}" />
+                            ${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.registMsg.p1')}
                         </strong>
                     </p>
                     <p class="mb-0">
                         <strong>
-                            <c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.registMsg.p2')}" />
+                            ${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.registMsg.p2')}
                         </strong>
                     </p>
                 </div>
@@ -62,41 +62,41 @@
                     <div class="card-body">
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId')}" /></span>
+                            	<span class="text-muted font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId')}</span>
                             </div>
                             <div class="col-12 col-md-8">${m:esc(userBean.userId)}</div>
                         </div>
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullName')}" /></span>
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullName')}</span>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName')}" /></span> 
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName')}</span>
                             	&nbsp;${m:esc(userBean.familyName)}
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName')}" /></span> 
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName')}</span>
                             	&nbsp;${m:esc(userBean.firstName)}
                             </div>
                         </div>
                         <% if (Consts.LANGUAGE_JA.equals(TemplateUtil.getLanguage()) || TemplateUtil.getLanguage() == null) { %>
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullNameKana')}" /></span>
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullNameKana')}</span>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana')}" /></span> 
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana')}</span>
                             	&nbsp;${m:esc(userBean.familyNameKana)}
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana')}" /></span> 
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana')}</span>
                             	&nbsp;${m:esc(userBean.firstNameKana)}
                             </div>
                         </div>
                         <% } %>
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted  font-weight-bold"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail')}" /></span>
+                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail')}</span>
                             </div>
                             <div class="col-12 col-md-8">${m:esc(userBean.mail)}</div>
                         </div>
@@ -106,7 +106,7 @@
             <div class="form-group mt-4">
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-dark">
-                    	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.regist')}" />
+                    	${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.regist')}
                     </button>
                 </div>
             </div>

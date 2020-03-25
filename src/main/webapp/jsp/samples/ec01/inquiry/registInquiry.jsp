@@ -37,15 +37,15 @@ if (inquiryBean == null) {
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.inquiry.regist.title')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.inquiry.regist.title')}
             </span>
         </nav>
     </div>
     <div class="col-12">
-        <span class="h4"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.inquiry.regist.title')}" /></span>
+        <span class="h4">${m:rs('iplass-wtp-messages', 'samples.ec01.inquiry.regist.title')}</span>
         <m:bind bean="${inquiryBean}">
         <form class="custom-form mt-3" action="${m:tcPath()}/samples/ec01/inquiry/doInquiry" method="post">
         	<input type="hidden" name="_t" value="${m:token()}">
@@ -110,7 +110,7 @@ if (inquiryBean == null) {
             <div class="form-group mt-4">
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-dark">
-                    	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.inquiry.regist.doRegist')}" />
+                    	${m:rs('iplass-wtp-messages', 'samples.ec01.inquiry.regist.doRegist')}
                     </button>
                 </div>
             </div>

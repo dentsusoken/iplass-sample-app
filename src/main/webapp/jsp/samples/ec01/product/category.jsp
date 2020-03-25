@@ -33,28 +33,28 @@
 		<div class="border-top"></div>
 		<nav class="breadcrumb all-breadcrumb">
 			<a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+				${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
 			</a>
 			<span class="breadcrumb-item active">
-				<c:out value="${categoryName}"/>
+				${m:esc(categoryName)}
 			</span>
 		</nav>
 	</div>
 </div>
 <div class="row d-none d-md-block">
 	<div class="col-12 clearfix">
-		<span class="h4"><c:out value="${categoryName}"/></span>
+		<span class="h4">${m:esc(categoryName)}</span>
 		<div class="dropdown float-right">
 			<button class="btn btn-outline-dark dropdown-toggle" type="button" id="categoryList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.title') }"/>
+				${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.title') }
 			</button>
 			<div class="dropdown-menu" aria-labelledby="categoryList">
 				<a class="dropdown-item" href="${URLHelper.getCategoryPath('all')}">
-					<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all')}" />
+					${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all')}
 				</a>
 				<div class="dropdown-divider"></div>
 				<c:forEach var="c" items="${categoryList}">
-					<a class="dropdown-item" href="${URLHelper.getCategoryPath(c.oid)}"><c:out value="${c.name}"/></a>
+					<a class="dropdown-item" href="${URLHelper.getCategoryPath(c.oid)}">${m:esc(c.name)}</a>
 				</c:forEach>
 			</div>
 		</div>
@@ -69,10 +69,10 @@
 			</a>
 			<div class="card-body pt-md-1 text-center">
 				<div>
-					<a href="${URLHelper.getProductDetailPath(p.oid)}" class="card-link text-dark"><c:out value="${p.name}"/></a>
+					<a href="${URLHelper.getProductDetailPath(p.oid)}" class="card-link text-dark">${m:esc(p.name)}</a>
 				</div>
 				<div class="all-price">
-					<c:out value="${p.price}"/><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+					${m:esc(p.price)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
 				</div>
 			</div>
 		</div>

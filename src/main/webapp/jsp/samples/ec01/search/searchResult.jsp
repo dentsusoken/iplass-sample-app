@@ -29,10 +29,10 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.search.keyword')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.search.keyword')}
             </span>
         </nav>
     </div>
@@ -40,8 +40,8 @@
 <div class="row mt-4">
     <div class="col-12">
         <h4>
-        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.search.result')}" />
-        	<c:out value="${keyword}" />
+        	${m:rs('iplass-wtp-messages', 'samples.ec01.search.result')}
+        	${m:esc(keyword)}
         </h4>
     </div>
     <c:forEach var="p" items="${productList}">
@@ -52,10 +52,10 @@
 	            </a>
 	            <div class="card-body pt-md-1 text-center">
 	                <div>
-	                    <a href="${URLHelper.getProductDetailPath(p.oid)}" class="card-link text-dark"><c:out value="${p.name}" /></a>
+	                    <a href="${URLHelper.getProductDetailPath(p.oid)}" class="card-link text-dark">${m:esc(p.name)}</a>
 	                </div>
 	                <div class="all-price">
-	                	<c:out value="${p.price}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+	                	${m:esc(p.price)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
 	                </div>
 	            </div>
 	        </div>

@@ -29,21 +29,21 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
             </a>
             <span class="breadcrumb-item active">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.newinfo.title')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.newinfo.title')}
             </span>
         </nav>
     </div>
 </div>
 <div class="row">
     <div class="col-12">
-        <h4 class="card-title"><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.newinfo.title')}" /></h4>
+        <h4 class="card-title">${m:rs('iplass-wtp-messages', 'samples.ec01.newinfo.title')}</h4>
         <div class="card border-0">
             <div class="card-body">
 				<c:forEach var="news" items="${newsInfoList}">
-					<p class="card-text border-bottom"><c:out value="${news.showDate}" />&nbsp;<c:out value="${news.content}" /></p>
+					<p class="card-text border-bottom">${m:esc(news.showDate)}&nbsp;	${m:esc(news.content)}</p>
 				</c:forEach>
             </div>
         </div>

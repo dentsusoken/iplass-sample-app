@@ -40,10 +40,10 @@
 		<div class="border-top"></div>
 		<nav class="breadcrumb all-breadcrumb">
 			<a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
-			</a> 
+				${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
+			</a>
 			<span class="breadcrumb-item active">
-				<c:out value="${productInfo.name}"/>
+				${m:esc(productInfo.name)}
 			</span>
 		</nav>
 	</div>
@@ -53,14 +53,14 @@
 		<img src="${URLHelper.getProductImageResource(productInfo, Product.PRODUCT_IMG)}" class="img-thumbnail w-100">
 	</div>
 	<div class="col-sm-12 col-md-7">
-		<h4><c:out value="${productInfo.name}"/></h4>
+		<h4>${m:esc(productInfo.name)}</h4>
 		<p class="font-weight-bold">
-			<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.price')}" />： 
+			${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.price')}：
 			<span class="all-price">
-				<c:out value="${productInfo.price}"/><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+				${m:esc(productInfo.price)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
 			</span>
-			（<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.priceWithoutTax')}" />
-			<c:out value="${m:fmt(productInfo.getPriceWithoutTax(), '###0')}" /><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />）
+			（${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.priceWithoutTax')}
+			${m:esc(m:fmt(productInfo.getPriceWithoutTax(), '###0'))}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}）
 		</p>
 		<p>
  			<%= regInfo %>
@@ -68,20 +68,20 @@
 		<!-- 商品サブ情報 -->
 		<p class="h5">
 			<c:forEach var="sub" items="${subInfoList}">
-				<span class="badge badge-info" title="${sub.description}"><c:out value="${sub.name}" /></span>
+				<span class="badge badge-info" title="${sub.description}">${m:esc(sub.name)}</span>
 			</c:forEach>
 		</p>
 		<div cart-data="addToCart">
 			<button type="button" class="btn btn-outline-dark my-2" onclick="inputCartInfo('${productInfo.oid}');">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.addToCart')}"/>
+				${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.addToCart')}
 			</button>
 		</div>
 		<div cart-data="viewCart" class="d-none">
 			<a class="btn btn-dark my-2" href="${m:tcPath()}/samples/ec01/cart/cartInfo">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.viewCart')}"/>
+				${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.viewCart')}
 			</a>
 			<a class="btn btn-outline-dark my-2" href="${m:tcPath()}/samples/ec01/top">
-				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.continueShopping')}"/>
+				${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.continueShopping')}
 			</a>
 		</div>
 	</div>
@@ -104,10 +104,10 @@
 					</a>
 					<div class="card-body pt-md-1 text-center">
 						<div>
-							<a href="${URLHelper.getProductDetailPath(p.oid)}" class="card-link text-dark"><c:out value="${p.name}"/></a>
+							<a href="${URLHelper.getProductDetailPath(p.oid)}" class="card-link text-dark">${m:esc(p.name)}</a>
 						</div>
 						<div class="all-price">
-							<c:out value="${p.price}"/><c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}" />
+							${m:esc(p.price)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
 						</div>
 					</div>
 				</div>

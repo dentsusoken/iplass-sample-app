@@ -29,16 +29,16 @@
         <div class="border-top"></div>
         <nav class="breadcrumb all-breadcrumb">
             <a class="breadcrumb-item text-primary" href="${m:tcPath()}/samples/ec01/top">
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.all.breadcrumb.home')}
             </a>
             <span class="breadcrumb-item active" >
-            	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.title')}" />
+            	${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.title')}
             </span>
         </nav>
     </div>
     <div class="col-12">
         <span class="h4">
-        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.title')}" />
+        	${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.title')}
         </span>
         <form class="custom-form mt-3" action="${m:tcPath()}/samples/ec01/member/doLogin" method="post">
 		<input type="hidden" name="_t" value="${m:token()}">
@@ -46,7 +46,7 @@
                 <div class="col-12">
                     <div>
                         <label for="id" class="col-form-label label-hidden">
-                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.userid')}" />
+                        	${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.userid')}
                         </label>
                         <input type="text" name="id" class="form-control border rounded input-hint-visible" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.userid')}">
                     </div>
@@ -54,7 +54,7 @@
                 <div class="col-12 mt-3">
                     <div>
                         <label for="password" class="col-form-label label-hidden">
-                        	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.password')}" />
+                        	${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.password')}
                         </label>
                         <input type="password" name="password" class="form-control border rounded input-hint-visible" placeholder="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.password')}">
                     </div>
@@ -63,25 +63,25 @@
             <div class="form-group mt-5">
                 <div class="col-12 text-center">
                     <button type="submit" class="btn btn-dark">
-                    	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.doLogin')}" />
+                    	${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.doLogin')}
                     </button>
                 </div>
             </div>
            	<div class="col-12 text-left">
            		<p>
-           			<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.registMemberInfo')}" /> 
+           			${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.registMemberInfo')}
            		</p>
            		<p>
            			<a class="text-dark" href="${m:tcPath()}/samples/ec01/member/inputMemberInfo">
-           				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.registMember')}" />
+           				${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.registMember')}
            			</a>
            		</p>
            		<p>
-           			<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.payInfo')}" />
+           			${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.payInfo')}
            		</p>
            		<p>
            			<a class="text-dark" href="${m:tcPath()}/samples/ec01/shipping/inputShippingInfoNoMember">
-           				<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.pay')}" />
+           				${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.pay')}
            			</a>
            		</p>
            	</div>

@@ -31,13 +31,13 @@ function button_onclick(action) {
 </script>
 
 <h2 class="hgroup-01">
-	<c:out value="${m:rs('iplass-wtp-messages', 'samples.ec01.backoffice.stockUpdate.title')}" />
+	${m:rs('iplass-wtp-messages', 'samples.ec01.backoffice.stockUpdate.title')}
 </h2>
 <form id="bulkForm" method="post" action="">
 <div class="operation-bar operation-bar_top">
 	<ul class="list_operation edit-bar">
 		<li class="btn update-btn">
-			<input type="button" class="gr-btn" value="${m:rs('iplass-wtp-messages', 'samples.ec01.backoffice.stockUpdate.doUpdate')}" 
+			<input type="button" class="gr-btn" value="${m:rs('iplass-wtp-messages', 'samples.ec01.backoffice.stockUpdate.doUpdate')}"
 					onclick="button_onclick('${m:tcPath()}/samples/ec01/backoffice/stock/doStockUpdate')" />
 		</li>
 	</ul>
