@@ -1,19 +1,19 @@
 /*
  * Copyright (C) 2018 INFORMATION SERVICES INTERNATIONAL - DENTSU, LTD. All Rights Reserved.
- * 
+ *
  * Unless you have purchased a commercial license,
  * the following license terms apply:
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
@@ -35,14 +35,14 @@ import org.iplass.mtp.util.StringUtil;
 import samples.ec01.dao.EntityDaoHelper;
 
 @ActionMapping(
-		name = "samples/ec01/backoffice/report/settlement", 
-		displayName = "請求書", 
-		privilaged = false, 
+		name = "samples/ec01/backoffice/report/settlement",
+		displayName = "請求書",
+		privilaged = false,
 		result = @Result(
-				type = Type.TEMPLATE, 
+				type = Type.TEMPLATE,
 				value = "samples/ec01/backoffice/report/settlement"))
 @CommandClass(
-		name = "samples/ec01/backoffice/report/SettlementViewCommand", 
+		name = "samples/ec01/backoffice/report/SettlementViewCommand",
 		displayName = "請求書コマンド")
 public class SettlementViewCommand implements Command {
 
@@ -66,9 +66,9 @@ public class SettlementViewCommand implements Command {
 		// 初期化
 		for (int cnt = 0; cnt < MAX_CNT; cnt++) {
 			request.setAttribute(RESULT_PRODUCT + cnt, "");
-			request.setAttribute(RESULT_QUANTITY + cnt, "0");
-			request.setAttribute(RESULT_ITEM_PRICE + cnt, "0");
-			request.setAttribute(RESULT_PRICE + cnt, "0");
+			request.setAttribute(RESULT_QUANTITY + cnt, 0L);
+			request.setAttribute(RESULT_ITEM_PRICE + cnt, 0L);
+			request.setAttribute(RESULT_PRICE + cnt, 0L);
 		}
 		int cnt = 0;
 		Long totalPrice = 0L;
