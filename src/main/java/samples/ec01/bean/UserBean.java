@@ -1,19 +1,19 @@
 /*
  * Copyright (C) 2018 INFORMATION SERVICES INTERNATIONAL - DENTSU, LTD. All Rights Reserved.
- * 
+ *
  * Unless you have purchased a commercial license,
  * the following license terms apply:
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
@@ -22,9 +22,10 @@ package samples.ec01.bean;
 
 import java.io.Serializable;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import org.iplass.mtp.auth.User;
 import org.iplass.mtp.web.template.TemplateUtil;
 
@@ -38,8 +39,8 @@ public class UserBean implements Serializable {
 	private static final long serialVersionUID = -2265215179819556717L;
 
 	@NotBlank(message = Consts.BLANK_MES)
-	@Length(min = Consts.USER_ID_MIN_LENGTH, 
-			max = Consts.USER_ID_MAX_LENGTH, 
+	@Size(min = Consts.USER_ID_MIN_LENGTH,
+			max = Consts.USER_ID_MAX_LENGTH,
 			message = Consts.USERID_MES1)
 	@UserId(message = Consts.USERID_MES2)
 	private String userId;
@@ -50,13 +51,13 @@ public class UserBean implements Serializable {
 	@NotBlank(message = Consts.BLANK_MES)
 	private String firstName;
 
-	@NotBlank(message = Consts.BLANK_MES, 
+	@NotBlank(message = Consts.BLANK_MES,
 			groups = JapaneseChecks.class)
 	@Kana(message = Consts.KANA_MES,
 			groups = JapaneseChecks.class)
 	private String familyNameKana;
 
-	@NotBlank(message = Consts.BLANK_MES, 
+	@NotBlank(message = Consts.BLANK_MES,
 			groups = JapaneseChecks.class)
 	@Kana(message = Consts.KANA_MES,
 			groups = JapaneseChecks.class)
@@ -113,7 +114,7 @@ public class UserBean implements Serializable {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-	
+
 	public User toEntity() {
 		// Entityクラスに変換する
 		User user = new User();

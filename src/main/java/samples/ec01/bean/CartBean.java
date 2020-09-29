@@ -1,19 +1,19 @@
 /*
  * Copyright (C) 2018 INFORMATION SERVICES INTERNATIONAL - DENTSU, LTD. All Rights Reserved.
- * 
+ *
  * Unless you have purchased a commercial license,
  * the following license terms apply:
- * 
+ *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- * 
+ *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
@@ -28,8 +28,8 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
-import org.hibernate.validator.constraints.NotBlank;
 import org.iplass.mtp.web.template.TemplateUtil;
 
 import samples.ec01.utils.Consts;
@@ -120,7 +120,7 @@ public class CartBean implements Serializable {
 		}
 		return totalAmount;
 	}
-	
+
 	// カートに入れた商品のoidリストを返却
 	public List<String> getProductIds() {
 		resetIfLanguageChanged(this);
@@ -129,7 +129,7 @@ public class CartBean implements Serializable {
 				.collect(Collectors.toList());
 		return productIds;
 	}
-	
+
 	// 画面で表示する言語が変更されたら、カートをリセットする。
 	private static void resetIfLanguageChanged(CartBean cart) {
 		if (cart == null) return;
@@ -153,7 +153,7 @@ public class CartBean implements Serializable {
 
 		public CartItem() {
 		}
-		
+
 		public CartItem(String productId) {
 			this(productId, 1);
 		}
