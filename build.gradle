@@ -19,16 +19,22 @@ repositories {
 }
 
 dependencies {
-	compile group: 'org.iplass', name: 'iplass-core', version: iPLAssVersion
-	compile group: 'org.iplass', name: 'iplass-gem', version: iPLAssVersion
-	compile group: 'org.iplass', name: 'iplass-web', version: iPLAssVersion
+	implementation platform("org.iplass:iplass-bom:${iPLAssVersion}")
 
-	runtime group: 'org.iplass', name: 'iplass-admin', version: iPLAssVersion
-	runtime group: 'org.iplass', name: 'iplass-tools', version: iPLAssVersion
+	implementation 'org.iplass:iplass-core'
+	implementation 'org.iplass:iplass-gem'
+	implementation 'org.iplass:iplass-web'
+
+	runtimeOnly 'org.iplass:iplass-admin'
+	runtimeOnly 'org.iplass:iplass-tools'
+
 	providedRuntime group: 'org.iplass', name: 'iplass-tools-batch', version: iPLAssVersion, transitive: false
 
 	// Infinispanを利用する場合は以下のコメントアウトを外してください。
-//	runtime group: 'org.iplass', name: 'iplass-infinispan', version: iPLAssVersion
+//	runtimeOnly 'org.iplass:iplass-infinispan'
+
+	// Redisを利用する場合は以下のコメントアウトを外してください。
+//	runtimeOnly 'org.iplass:iplass-redis'
 
 	//provided JavaEE7 apis
 	//Servlet
@@ -58,34 +64,34 @@ dependencies {
 
 	//if your app server is tomcat 8.5, use this
 	//jstl runtime
-	runtime 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
-	runtime(group: 'org.glassfish.web', name: 'javax.servlet.jsp.jstl', version: '1.2.3') {
+	runtimeOnly 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1'
+	runtimeOnly(group: 'org.glassfish.web', name: 'javax.servlet.jsp.jstl', version: '1.2.3') {
 		//use javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api
 		exclude(group: 'javax.servlet.jsp.jstl', module: 'jstl-api')
 	}
 
 	//java mail runtime
-	runtime group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6'
+	runtimeOnly group: 'com.sun.mail', name: 'javax.mail', version: '1.5.6'
 
 	//Bean validation runtime
-	runtime group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
-	runtime group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'
-	runtime group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b08'
+	runtimeOnly group: 'javax.validation', name: 'validation-api', version: '1.1.0.Final'
+	runtimeOnly group: 'org.hibernate', name: 'hibernate-validator', version: '5.4.1.Final'
+	runtimeOnly group: 'org.glassfish', name: 'javax.el', version: '3.0.1-b08'
 
 	//JAX-RS runtime
-	runtime group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25.1'
-	runtime group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.25.1'
-	runtime group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.25.1'
-	runtime group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.8.9'
+	runtimeOnly group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet', version: '2.25.1'
+	runtimeOnly group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.25.1'
+	runtimeOnly group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.25.1'
+	runtimeOnly group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.8.9'
 
 	//JAXB runtime for java11
-	runtime group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
-	runtime group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
-	runtime group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.0.1'
+	runtimeOnly group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.0'
+	runtimeOnly group: 'com.sun.xml.bind', name: 'jaxb-core', version: '2.3.0.1'
+	runtimeOnly group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.3.0.1'
 
-	testCompile 'junit:junit:4.12'
+	testImplementation 'junit:junit:4.12'
 
-	testCompile group: 'org.iplass', name: 'iplass-test', version: iPLAssVersion
+	testImplementation 'org.iplass:iplass-test'
 
 	// 以下のJDBCドライバはテナント作成ツール(runTenantBatchタスク)の実行に必要となります。
 	// 実行する場合は使用するJDBCドライバのコメントアウトを外してください。
