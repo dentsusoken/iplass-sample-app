@@ -7513,8 +7513,7 @@ var oid = $(":hidden[name='oid']").val();
         <name>samples.ec01.products.Product</name>
         <definitionId>44056a38-2e94-46dc-a630-d28651a4241c</definitionId>
         <views xsi:type="metaDetailFormView">
-            <name></name>
-            <isPurge>false</isPurge>
+            <name/>
             <localizationData>false</localizationData>
             <dialogMaximize>false</dialogMaximize>
             <sections xsi:type="metaDefaultSection">
@@ -7535,6 +7534,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaStringPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>Text</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -7561,6 +7561,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaStringPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>Text</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -7587,6 +7588,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaStringPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>TextArea</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -7705,6 +7707,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaReferencePropertyEditor">
                         <displayType>Tree</displayType>
                         <editableReference>false</editableReference>
+                        <forceUpadte>false</forceUpadte>
                         <hideDeleteButton>false</hideDeleteButton>
                         <hideRegistButton>false</hideRegistButton>
                         <hideSelectButton>false</hideSelectButton>
@@ -7779,6 +7782,8 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaBinaryPropertyEditor">
                         <displayType>Binary</displayType>
                         <height>0</height>
+                        <hideDeleteButton>false</hideDeleteButton>
+                        <hideSelectButton>false</hideSelectButton>
                         <openNewTab>false</openNewTab>
                         <usePdfjs>false</usePdfjs>
                         <width>0</width>
@@ -7879,6 +7884,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaLongTextPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>TextArea</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -7931,6 +7937,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaReferencePropertyEditor">
                         <displayType>Link</displayType>
                         <editableReference>false</editableReference>
+                        <forceUpadte>false</forceUpadte>
                         <hideDeleteButton>false</hideDeleteButton>
                         <hideRegistButton>false</hideRegistButton>
                         <hideSelectButton>false</hideSelectButton>
@@ -8015,18 +8022,21 @@ var oid = $(":hidden[name='oid']").val();
             <hideLock>false</hideLock>
             <isNoneDispCopyButton>false</isNoneDispCopyButton>
             <hideDelete>false</hideDelete>
+            <checkEntityPermissionLimitConditionOfButton>false</checkEntityPermissionLimitConditionOfButton>
+            <isPurge>false</isPurge>
             <purgeCompositionedEntity>false</purgeCompositionedEntity>
             <loadDefinedReferenceProperty>false</loadDefinedReferenceProperty>
+            <forceUpadte>false</forceUpadte>
         </views>
         <views xsi:type="metaSearchFormView">
-            <name></name>
-            <isPurge>false</isPurge>
+            <name/>
             <localizationData>false</localizationData>
             <dialogMaximize>false</dialogMaximize>
             <sections xsi:type="metaSearchConditionSection">
                 <dispFlag>false</dispFlag>
                 <colNum>1</colNum>
                 <conditionDispCount>5</conditionDispCount>
+                <csvMultipleFormat>EACH_COLUMN</csvMultipleFormat>
                 <csvUploadTransactionType>ONCE</csvUploadTransactionType>
                 <distinct>false</distinct>
                 <elements xsi:type="metaPropertyItem">
@@ -8044,6 +8054,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaStringPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>Text</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -8070,6 +8081,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaReferencePropertyEditor">
                         <displayType>Tree</displayType>
                         <editableReference>false</editableReference>
+                        <forceUpadte>false</forceUpadte>
                         <hideDeleteButton>false</hideDeleteButton>
                         <hideRegistButton>false</hideRegistButton>
                         <hideSelectButton>false</hideSelectButton>
@@ -8217,6 +8229,7 @@ var oid = $(":hidden[name='oid']").val();
                     <requiredNormal>false</requiredNormal>
                     <requiredDetail>false</requiredDetail>
                 </elements>
+                <fulltextSearchSorted>false</fulltextSearchSorted>
                 <hideCsvUpload>false</hideCsvUpload>
                 <hideCsvdownload>false</hideCsvdownload>
                 <hideCsvdownloadDialog>false</hideCsvdownloadDialog>
@@ -8231,6 +8244,10 @@ var oid = $(":hidden[name='oid']").val();
             </sections>
             <sections xsi:type="metaSearchResultSection">
                 <dispFlag>false</dispFlag>
+                <bulkUpdateAllCommandTransactionType>DIVISION</bulkUpdateAllCommandTransactionType>
+                <checkEntityPermissionLimitConditionOfEditLink>false</checkEntityPermissionLimitConditionOfEditLink>
+                <deleteAllCommandTransactionType>DIVISION</deleteAllCommandTransactionType>
+                <dispHeight>0</dispHeight>
                 <dispRowCount>10</dispRowCount>
                 <elements xsi:type="metaPropertyColumn">
                     <dispFlag>true</dispFlag>
@@ -8247,6 +8264,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaStringPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>Text</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -8267,6 +8285,8 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaBinaryPropertyEditor">
                         <displayType>Preview</displayType>
                         <height>50</height>
+                        <hideDeleteButton>false</hideDeleteButton>
+                        <hideSelectButton>false</hideSelectButton>
                         <openNewTab>false</openNewTab>
                         <usePdfjs>false</usePdfjs>
                         <width>50</width>
@@ -8288,6 +8308,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaReferencePropertyEditor">
                         <displayType>Link</displayType>
                         <editableReference>false</editableReference>
+                        <forceUpadte>false</forceUpadte>
                         <hideDeleteButton>false</hideDeleteButton>
                         <hideRegistButton>false</hideRegistButton>
                         <hideSelectButton>false</hideSelectButton>
@@ -8401,6 +8422,7 @@ var oid = $(":hidden[name='oid']").val();
                     <editor xsi:type="metaLongTextPropertyEditor">
                         <allowedContent>false</allowedContent>
                         <displayType>TextArea</displayType>
+                        <hideRichtextEditorToolBar>false</hideRichtextEditorToolBar>
                         <maxlength>0</maxlength>
                         <searchExactMatchCondition>false</searchExactMatchCondition>
                     </editor>
@@ -8426,16 +8448,23 @@ var oid = $(":hidden[name='oid']").val();
                     </editor>
                     <width>0</width>
                 </elements>
+                <exclusiveControlPoint>WHEN_DIALOG_OPEN</exclusiveControlPoint>
+                <forceUpadte>false</forceUpadte>
+                <groupingData>false</groupingData>
                 <hideCount>false</hideCount>
                 <hideDelete>false</hideDelete>
                 <hideDetailLink>false</hideDetailLink>
                 <hidePageJump>false</hidePageJump>
                 <hidePageLink>false</hidePageLink>
                 <hidePaging>false</hidePaging>
+                <purgeCompositionedEntity>false</purgeCompositionedEntity>
+                <showBulkUpdate>true</showBulkUpdate>
+                <useBulkView>true</useBulkView>
             </sections>
             <hideTrash>false</hideTrash>
             <allowTrashOperationToRecycleBy>false</allowTrashOperationToRecycleBy>
             <hideNew>false</hideNew>
+            <isPurge>false</isPurge>
             <useInterrupterForCsvDownload>false</useInterrupterForCsvDownload>
         </views>
     </metaData>
