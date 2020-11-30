@@ -130,7 +130,7 @@ eclipse {
 		}
 
 		component {
-			contextPath  = 'mtp'
+			contextPath  = 'iplass-sample-app'
 		}
 	}
 }
