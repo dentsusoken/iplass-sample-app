@@ -88,6 +88,9 @@ dependencies {
 	//JAF runtime for java11
 	runtimeOnly group: 'com.sun.activation', name: 'jakarta.activation', version: '1.2.2'
 
+	//groovy runtime for java17
+	runtimeOnly group: 'org.codehaus.groovy', name: 'groovy-bom', version: '3.0.12'
+
 	testImplementation 'junit:junit:4.12'
 
 	testImplementation 'org.iplass:iplass-test'
