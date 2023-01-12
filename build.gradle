@@ -2,6 +2,10 @@ apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'eclipse-wtp'
 
+ext {
+	javaVersion = JavaVersion.VERSION_1_8
+}
+
 repositories {
 	mavenCentral()
 
@@ -102,6 +106,11 @@ dependencies {
 	providedRuntime fileTree('lib').include('**/*.jar')
 }
 
+java {
+	sourceCompatibility = javaVersion
+	targetCompatibility = javaVersion
+}
+
 eclipse {
 	project {
 
@@ -116,11 +125,11 @@ eclipse {
 
 		facet {
 			facets = []
-			facet name: 'jst.java', version: '1.8'
+			facet name: 'jst.java', version: javaVersion
 			facet name: 'jst.web', version: '4.0'
 			facet name: 'wst.jsdt.web', version: '1.0'
 
-			//set Runtime to tocat v9.0
+			//set Runtime to tomcat v9.0
 			file {
 				withXml {
 					it.asNode().appendNode('runtime', [name: 'Apache Tomcat v9.0'])
@@ -140,6 +149,6 @@ tasks.withType(AbstractCompile) {
 
 // テナント作成ツール実行
 task runTenantBatch(type: JavaExec, group: 'application', description : 'execute tenant batch.') {
-	main = "org.iplass.mtp.tools.batch.tenant.TenantBatch"
+	mainClass = "org.iplass.mtp.tools.batch.tenant.TenantBatch"
 	classpath = sourceSets.main.runtimeClasspath
 }
