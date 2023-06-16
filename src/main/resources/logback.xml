@@ -54,14 +54,6 @@
 -->
 	</logger>
 
-	<!-- Because base class of Converter(commons BeanUtils AbstractConverter) outputs large amount of log on sub class package name...  -->
-	<logger name="org.iplass.impl.util.converters" level="INFO" additivity="false">
-		<appender-ref ref="STDOUT" />
-<!--
-		<appender-ref ref="FILE_PER_TENANT" />
--->
-	</logger>
-	
 	<logger name="samples.ec01" level="DEBUG">
 		<appender-ref ref="STDOUT" />
 <!--
