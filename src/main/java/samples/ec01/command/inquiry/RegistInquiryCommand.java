@@ -20,7 +20,7 @@
 
 package samples.ec01.command.inquiry;
 
-import javax.validation.groups.Default;
+import jakarta.validation.groups.Default;
 
 import org.iplass.gem.command.Constants;
 import org.iplass.mtp.command.Command;

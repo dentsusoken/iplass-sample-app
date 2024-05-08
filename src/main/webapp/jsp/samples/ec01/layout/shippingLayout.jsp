@@ -23,7 +23,7 @@
 <%@ page import="samples.ec01.utils.URLHelper"%>
 <%@ page import="samples.ec01.entity.Product" %>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <!DOCTYPE html>
 <html lang="<%=TemplateUtil.getLanguage() %>">

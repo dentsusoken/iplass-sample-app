@@ -27,7 +27,7 @@
 <%@ page import="org.iplass.mtp.auth.login.LoginFailedException" %>
 <%@ page import="samples.ec01.command.exception.EntityDataNotFoundException" %>
 <%@ page import="samples.ec01.command.exception.SessionValueNotFoundException" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
 
 <div class="row">

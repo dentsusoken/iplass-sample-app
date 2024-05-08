@@ -23,7 +23,7 @@
 <%@ page import="samples.ec01.utils.Consts" %>
 <%@ page import="samples.ec01.entity.Product"%>
 <%@ page import="samples.ec01.bean.CartBean" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
 
 <div class="row">

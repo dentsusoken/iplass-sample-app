@@ -23,7 +23,7 @@
 <%@ page import="samples.ec01.entity.Shop"%>
 <%@ page import="samples.ec01.entity.TradeLaw"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <div class="row">
     <div class="col-12">

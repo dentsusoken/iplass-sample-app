@@ -22,7 +22,7 @@ package samples.ec01.command.member;
 
 import java.util.List;
 
-import javax.validation.groups.Default;
+import jakarta.validation.groups.Default;
 
 import org.iplass.gem.command.Constants;
 import org.iplass.mtp.command.Command;

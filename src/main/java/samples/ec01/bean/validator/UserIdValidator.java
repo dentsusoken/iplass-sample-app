@@ -23,8 +23,8 @@ package samples.ec01.bean.validator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.validation.ConstraintValidator;
-import javax.validation.ConstraintValidatorContext;
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
 
 import samples.ec01.bean.annotation.UserId;
 import samples.ec01.utils.Consts;

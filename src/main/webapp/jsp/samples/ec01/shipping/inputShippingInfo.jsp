@@ -22,7 +22,7 @@
 <%@ page import="org.iplass.mtp.web.template.TemplateUtil"%>
 <%@ page import="samples.ec01.utils.Consts" %>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <m:bind bean="${shippingBean}">
  <form class="custom-form" action="${m:tcPath()}/samples/ec01/shipping/confirmShippingInfo" method="post">
