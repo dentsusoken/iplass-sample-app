@@ -46,7 +46,7 @@ import samples.ec01.entity.Product;
 		displayName = "全文検索用コマンド", 
 		accepts = RequestType.REST_JSON, 
 		methods = MethodType.POST, 
-		privilaged = true, 
+		privileged = true, 
 		restJson = @RestJson(parameterName = "param"), 
 		results = FulltextSearchCommand.RESULT_DEFAULT_RESULT)
 @CommandClass(

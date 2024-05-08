@@ -37,7 +37,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/member/login", 
 		displayName = "ログイン画面表示", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/member/login"),
@@ -45,7 +45,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/error/loginError", 
 		displayName = "認証エラー画面", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/error/loginError"),
@@ -53,7 +53,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/member/doLogin", 
 		displayName = "ログイン認証処理", 
-		privilaged = true, 
+		privileged = true, 
 		allowMethod = HttpMethodType.POST,
 		result = {
 				@Result(

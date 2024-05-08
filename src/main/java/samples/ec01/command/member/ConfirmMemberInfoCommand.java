@@ -46,7 +46,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/member/confirmMemberInfo", 
 		displayName = "会員情報確認アクション", 
-		privilaged = true, 
+		privileged = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 
 				consume = true, 

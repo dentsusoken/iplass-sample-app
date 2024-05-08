@@ -42,7 +42,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/layout/shippingLayout", 
 		displayName = "配送先入力用レイアウト", 
-		privilaged = true, 
+		privileged = true, 
 		parts = true,
 		result = @Result(
 				type = Type.TEMPLATE, 

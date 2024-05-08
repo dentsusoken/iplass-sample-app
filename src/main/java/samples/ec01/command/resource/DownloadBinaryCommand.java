@@ -40,7 +40,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/resource/bin", 
 		displayName = "バイナリデータダウロード",
-		privilaged = true,
+		privileged = true,
 		result = @Result(
 				type = Type.STREAM, 
 				value = DownloadBinaryCommand.RESULT_STREAM))

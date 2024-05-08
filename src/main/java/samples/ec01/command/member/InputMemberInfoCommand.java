@@ -37,7 +37,7 @@ import samples.ec01.entity.MemberAgree;
 @ActionMapping(
 		name = "samples/ec01/member/inputMemberInfo", 
 		displayName = "会員情報入力アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/member/inputMemberInfo"))

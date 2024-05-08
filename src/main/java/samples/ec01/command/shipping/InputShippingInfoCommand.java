@@ -38,7 +38,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/shipping/editShippingInfo", 
 		displayName = "配送情報編集画面表示アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result( 
 					type = Type.TEMPLATE, 
 					value = "samples/ec01/shipping/inputShippingInfo"),
@@ -46,7 +46,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/shipping/inputShippingInfo", 
 		displayName = "配送情報入力画面表示アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = { 
 			@Result(
 					status = Constants.CMD_EXEC_ERROR, 

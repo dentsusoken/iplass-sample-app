@@ -37,7 +37,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/cart/deleteCartInfo", 
 		displayName = "カート情報削除アクション", 
-		privilaged = true,
+		privileged = true,
 		synchronizeOnSession = true,
 		result = @Result(
 				type = Type.REDIRECT, 

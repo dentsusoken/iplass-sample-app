@@ -39,7 +39,7 @@ import samples.ec01.entity.Product;
 @ActionMapping(
 		name = "samples/ec01/backoffice/stock/doStockUpdate", 
 		displayName = "在庫一括更新", 
-		privilaged = false, 
+		privileged = false, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/backoffice/stock/stockUpdate"))

@@ -41,7 +41,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/cart/cartInfo", 
 		displayName = "カート情報アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/cart/cartInfo"))

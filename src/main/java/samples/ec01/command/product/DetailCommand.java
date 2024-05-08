@@ -44,7 +44,7 @@ import samples.ec01.entity.ProductSubInfo;
 @ActionMapping(
 		name = "samples/ec01/product/detail", 
 		displayName = "詳細画面用アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/product/detail"))

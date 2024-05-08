@@ -31,7 +31,7 @@ import org.iplass.mtp.command.annotation.action.Result.Type;
 @ActionMapping(
 		name = "samples/ec01/backoffice/report/order", 
 		displayName = "注文情報", 
-		privilaged = false, 
+		privileged = false, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/backoffice/report/order"))

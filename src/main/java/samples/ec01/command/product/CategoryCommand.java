@@ -42,7 +42,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/product/category", 
 		displayName = "カテゴリ表示用アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/product/category"))

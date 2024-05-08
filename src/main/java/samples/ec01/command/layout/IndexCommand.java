@@ -38,7 +38,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/layout/defaultLayout", 
 		displayName = "標準レイアウト", 
-		privilaged = true, 
+		privileged = true, 
 		parts = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 

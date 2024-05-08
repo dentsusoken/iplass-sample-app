@@ -43,7 +43,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/member/registMemberInfo", 
 		displayName = "会員情報登録処理", 
-		privilaged = true, 
+		privileged = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 
 				consume = true, 

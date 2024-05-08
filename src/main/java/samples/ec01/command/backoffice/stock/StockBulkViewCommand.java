@@ -36,7 +36,7 @@ import samples.ec01.entity.Product;
 @ActionMapping(
 		name = "samples/ec01/backoffice/stock/stockUpdate", 
 		displayName = "在庫一括表示", 
-		privilaged = false, 
+		privileged = false, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/backoffice/stock/stockUpdate"))
