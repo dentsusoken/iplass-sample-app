@@ -83,12 +83,13 @@ dependencies {
 	// Jakarta xml binding runtime
 	runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:4.0.5'
 
+	// NOTE: Bundled with tomcat, required for batch.
+	// Jakarta EL runtime
+	runtimeOnly 'org.glassfish.expressly:expressly:5.0.0'
+
 	testImplementation 'junit:junit:4.12'
 
 	testImplementation 'org.iplass:iplass-test'
-
-	// Jakarta EL runtime
-	testRuntimeOnly 'org.glassfish.expressly:expressly:5.0.0'
 
 	// 以下のJDBCドライバはテナント作成ツール(runTenantBatchタスク)の実行に必要となります。
 	// 実行する場合は使用するJDBCドライバのコメントアウトを外してください。
