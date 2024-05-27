@@ -9,11 +9,6 @@ ext {
 repositories {
 	mavenCentral()
 
-	maven {
-		// for jasper reports
-		url 'https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/'
-	}
-
 	if (project.hasProperty('iPLAssMavenRepoUrl')) {
 		maven {
 			url iPLAssMavenRepoUrl
