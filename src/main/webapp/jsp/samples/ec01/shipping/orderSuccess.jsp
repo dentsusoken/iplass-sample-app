@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="col-12 mt-4 text-center clearfix">
-        <div class="float-md-right">
+        <div class="float-md-end">
             <a class="btn btn-dark" href="${m:tcPath()}/samples/ec01/top">
             	${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.success.return')}
             </a>

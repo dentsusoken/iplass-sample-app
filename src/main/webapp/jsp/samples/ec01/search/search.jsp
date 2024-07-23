@@ -41,8 +41,8 @@
         <h4>${m:rs('iplass-wtp-messages', 'samples.ec01.search.title')}</h4>
         <div class="input-group col-12">
             <input type="text" class="form-control" id="productName" placeholder="Search for...">
-            <div class="dropdown float-right">
-				<button class="btn btn-outline-dark dropdown-toggle" type="button" id="categoryList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" category-item-selected="all">
+            <div class="dropdown float-end">
+				<button class="btn btn-outline-dark dropdown-toggle" type="button" id="categoryList" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" category-item-selected="all">
 					${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.title')}
 				</button>
 				<div class="dropdown-menu" aria-labelledby="categoryList">

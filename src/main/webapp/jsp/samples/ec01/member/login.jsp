@@ -67,7 +67,7 @@
                     </button>
                 </div>
             </div>
-           	<div class="col-12 text-left">
+           	<div class="col-12 text-start">
            		<p>
            			${m:rs('iplass-wtp-messages', 'samples.ec01.member.login.registMemberInfo')}
            		</p>

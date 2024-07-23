@@ -46,26 +46,26 @@
 				${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.title')}
 			</h5>
 			<div class="card col bg-light">
-				<div div class="card-body pl-0 text-left"
+				<div div class="card-body pl-0 text-start"
 					style="position: relative;">
 					<div class="row">
-						<div class="col-12 col-md-12 text-muted font-weight-bold">
+						<div class="col-12 col-md-12 text-muted fw-bold">
 							${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.addressInfo')}
 						</div>
-						<div class="col-12 col-md-4 text-muted font-weight-bold shipping-contract-label">
+						<div class="col-12 col-md-4 text-muted fw-bold shipping-contract-label">
 							${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.mail')}
 						</div>
 						<div class="col-12 col-md-8 shipping-contract-text">
 							${m:esc(shippingBean.mail)}
 						</div>
-						<div class="col-12 col-md-4 text-muted font-weight-bold shipping-contract-label">
+						<div class="col-12 col-md-4 text-muted fw-bold shipping-contract-label">
 							${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.fullName')}
 						</div>
 						<div class="col-12 col-md-8 shipping-contract-text">
 							${m:esc(shippingBean.familyName)}&nbsp;${m:esc(shippingBean.firstName)}
 						</div>
 						<% if (Consts.LANGUAGE_JA.equals(TemplateUtil.getLanguage()) || TemplateUtil.getLanguage() == null) { %>
-						<div class="col-12 col-md-4 text-muted font-weight-bold shipping-contract-label">
+						<div class="col-12 col-md-4 text-muted fw-bold shipping-contract-label">
 							${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.fullNameKana')}
 						</div>
 						<div class="col-12 col-md-8 shipping-contract-text">
@@ -77,13 +77,13 @@
 								${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.edit')}
 							</a>
 						</div>
-						<div class="col-12 col-md-4 text-muted font-weight-bold shipping-contract-label">
+						<div class="col-12 col-md-4 text-muted fw-bold shipping-contract-label">
 							${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.address')}
 						</div>
 						<div class="col-12 col-md-8 shipping-contract-text">
 							${m:esc(shippingBean.address)}
 						</div>
-						<div class="col-12 col-md-4 text-muted font-weight-bold shipping-contract-label">
+						<div class="col-12 col-md-4 text-muted fw-bold shipping-contract-label">
 							${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.tel')}
 						</div>
 						<div class="col-12 col-md-8 shipping-contract-text">
@@ -94,12 +94,12 @@
 			</div>
 		</div>
 		<div class="col-12 mt-4 text-center clearfix">
-			<div class="float-md-right">
+			<div class="float-md-end">
 				<button type="submit" class="btn btn-dark btn-lg">
 					${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.order')}
 				</button>
 			</div>
-			<div class="text-md-left mt-2">
+			<div class="text-md-start mt-2">
 				<a class="btn btn-sm" href="${m:tcPath()}/samples/ec01/shipping/editShippingInfo" role="button">
 					&lt;${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.confirm.return')}
 				</a>

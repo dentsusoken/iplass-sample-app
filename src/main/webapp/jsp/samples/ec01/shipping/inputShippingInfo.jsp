@@ -124,12 +124,12 @@
              </div>
          </div>
          <div class="col-12 mt-4 text-center clearfix">
-             <div class="float-md-right">
+             <div class="float-md-end">
                  <button type="submit" class="btn btn-dark btn-lg">
                  	${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.delivery')}
                  </button>
              </div>
-             <div class="text-md-left mt-2">
+             <div class="text-md-start mt-2">
                  <a class="btn btn-sm" href="${m:tcPath()}/samples/ec01/cart/cartInfo" role="button">&lt;
                  	${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.input.return')}
                  </a>

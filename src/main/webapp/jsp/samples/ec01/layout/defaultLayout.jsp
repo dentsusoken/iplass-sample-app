@@ -52,11 +52,11 @@
                 <nav class="navbar navbar-expand-md navbar-light layout-navbar">
                     <!-- 大きい画面で表示 start-->
                     <div class="d-none d-md-block">
-                        <form class="form-inline" action="${m:tcPath()}/samples/ec01/search/doSearch"  method="post">
+                        <form class="d-flex align-items-center" action="${m:tcPath()}/samples/ec01/search/doSearch"  method="post">
                             <button class="btn  bg-transparent btn-lg" type="submit">
                                 <span class="oi oi-magnifying-glass" title="search" aria-hidden="true"></span>
                             </button>
-                            <input type="text" class="form-control mr-md-2 layout-navbar-text border-0" name="productName" placeholder="Search">
+                            <input type="text" class="form-control me-2 layout-navbar-text border-0" name="productName" placeholder="Search">
                         </form>
                     </div>
                     <!-- 大きい画面で表示 end-->
@@ -100,22 +100,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 border-top text-center text-md-left">
-                <p class="h1 font-weight-bold my-3">iPLAss.</p>
+            <div class="col-12 border-top text-center text-md-start">
+                <p class="h1 fw-bold my-3">iPLAss.</p>
             </div>
         </div>
         <!-- 小さい画面で表示  start-->
         <div class="row">
             <div class="col-12 d-block d-md-none">
                 <div class="navbar-light border-top text-center py-2">
-                    <button class="navbar-toggler hidden-md-up border-0" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                    <button class="navbar-toggler hidden-md-up border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId"
                         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="oi oi-menu"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="collapsibleNavId">
                         <ul class="list-group mt-2 d-block d-md-none">
                             <li class="list-group-item border-0">
-                                <a class="nav-link text-dark font-weight-bold" href="${m:tcPath()}/samples/ec01/top">${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.home')}</a>
+                                <a class="nav-link text-dark fw-bold" href="${m:tcPath()}/samples/ec01/top">${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.home')}</a>
                             </li>
                             <li class="list-group-item border-0">
                             	<a class="nav-link text-dark" href="${URLHelper.getCategoryPath('all')}">${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.all')}</a>
@@ -135,8 +135,8 @@
             <div class="col-md-3 d-none d-md-block">
                 <div class="row">
                     <div class="col-12">
-                        <div class="list-group list-group-item-dark list-group-flush">
-                            <a href="${m:tcPath()}/samples/ec01/top" class="list-group-item list-group-item-action font-weight-bold border-top">${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.home')}</a>
+                        <div class="list-group list-group-flush">
+                            <a href="${m:tcPath()}/samples/ec01/top" class="list-group-item list-group-item-action fw-bold border-top">${m:rs('iplass-wtp-messages', 'samples.ec01.layout.defaultLayout.home')}</a>
 							<c:forEach var="category" items="${categoryList}">
 								<a href="${URLHelper.getCategoryPath(category.oid)}" class="list-group-item list-group-item-action">${category.name}</a>
 							</c:forEach>
@@ -152,7 +152,7 @@
         <div class="row">
             <div class="col-12">
                 <ul class="list-group">
-                    <li class="list-group-item border-0 font-weight-bold">Links</li>
+                    <li class="list-group-item border-0 fw-bold">Links</li>
                     <li class="list-group-item border-0">
                         <a href="${m:tcPath()}/samples/ec01/news/newInfo" class="text-dark">${m:rs('iplass-wtp-messages','samples.ec01.layout.defaultLayout.news')}</a>
                     </li>
@@ -169,7 +169,7 @@
             </div>
         </div>
         <div class="row layout-footer bg-dark">
-            <div class="col-md-12 text-light text-left">Copyright（c）2018 MTP Demo Store all rights reserved.</div>
+            <div class="col-md-12 text-light text-start">Copyright（c）2018 MTP Demo Store all rights reserved.</div>
         </div>
     </div>
     <!-- jQuery first, then Tether, then Bootstrap JS. -->

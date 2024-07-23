@@ -40,7 +40,7 @@
 		</c:otherwise>
 	</c:choose> 
 				<span aria-hidden="true">&laquo;${m:rs('iplass-wtp-messages', 'samples.ec01.all.pagination.prev')}</span>
-				<span class="sr-only">Previous</span>
+				<span class="visually-hidden">Previous</span>
 			</a>
 	</li>
 <!-- ページ番号 -->
@@ -76,7 +76,7 @@
 		</c:otherwise>
 	</c:choose>
 				<span aria-hidden="true">&laquo;${m:rs('iplass-wtp-messages', 'samples.ec01.all.pagination.next')}</span>
-				<span class="sr-only">Next</span>
+				<span class="visually-hidden">Next</span>
 			</a>
 	</li>
  </ul>
