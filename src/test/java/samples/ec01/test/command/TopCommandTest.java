@@ -32,29 +32,27 @@ import org.iplass.mtp.entity.EntityManager;
 import org.iplass.mtp.entity.SearchResult;
 import org.iplass.mtp.entity.query.Query;
 import org.iplass.mtp.entity.query.condition.predicate.Equals;
-import org.iplass.mtp.test.MTPJUnitTestRule;
+import org.iplass.mtp.test.MTPJUnitTestExtension;
 import org.iplass.mtp.test.MTPTest;
 import org.iplass.mtp.test.NoAuthUser;
 import org.iplass.mtp.test.TestRequestContext;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import samples.ec01.entity.Product;
 
-public class TopCommandTest {
+@ExtendWith(MTPJUnitTestExtension.class)
+class TopCommandTest {
 
 	static final String COMMAND_NAME = "samples/ec01/TopCommand";
-
-	@Rule
-	public MTPJUnitTestRule rule = new MTPJUnitTestRule();
 
 	/**
 	 * TopCommandでオススメ商品を検索する際のMock関数を設定する。
 	 */
-	@BeforeClass
-	public static void setUp() {
+	@BeforeAll
+	static void setUpBeforeClass() {
 		@SuppressWarnings("serial")
 		EntityManager mock = (EntityManager) Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(),
 				new Class<?>[] { EntityManager.class }, (proxy, method, args) -> {
@@ -94,14 +92,14 @@ public class TopCommandTest {
 		MTPTest.setManagerMock(EntityManager.class, mock);
 	}
 
-	@AfterClass
-	public static void tearDown() {
+	@AfterAll
+	static void tearDownAfterClass() {
 		MTPTest.resetManagerMock();
 	}
 
 	@Test
 	@NoAuthUser
-	public void testExecuteCommand() {
+	void testExecuteCommand() {
 		TestRequestContext req = new TestRequestContext();
 		String status = MTPTest.invokeCommand(COMMAND_NAME, req);
 		assertEquals(Constants.CMD_EXEC_SUCCESS, status);
