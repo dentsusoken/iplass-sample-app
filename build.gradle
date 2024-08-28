@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'war'
 	id 'eclipse-wtp'
+	id 'org.iplass.dev' version '1.0.0'
 }
 
 ext {
@@ -147,3 +148,21 @@ task runTenantBatch(type: JavaExec, group: 'application', description : 'execute
 	mainClass = "org.iplass.mtp.tools.batch.tenant.TenantBatch"
 	classpath = sourceSets.main.runtimeClasspath
 }
+
+// ===============================
+//  org.iplass.dev プラグイン設定
+// ===============================
+//configure(iplass) {
+//	// required
+//	tenantId = TENANT_ID // change your tenant id
+//
+//	// optional
+//	//serviceConfig = '/mtp-service-config.xml'
+//	//language = 'system'
+//	//classpath = sourceSets.main.runtimeClasspath
+//}
+//
+//metaSyncRdbToFile {
+//	// RDB管理しているメタデータパスを入力する。
+//	source = ['/entity/*', '/staticresource/*']
+//}
