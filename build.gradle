@@ -37,6 +37,9 @@ dependencies {
 	// Redisを利用する場合は以下のコメントアウトを外してください。
 //	runtimeOnly 'org.iplass:iplass-redis'
 
+	// GoogleCloudを利用する場合は以下のコメントアウトを外してください。
+//	runtimeOnly 'org.iplass:iplass-googlecloud'
+
 	// provided JakartaEE 10 apis
 	// Jakarta Servlet
 	providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
