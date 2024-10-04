@@ -37,7 +37,7 @@ import samples.ec01.entity.TradeLaw;
 @ActionMapping(
 		name = "samples/ec01/shop/tradeLaw", 
 		displayName = "特定商取引画面表示アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/shop/tradeLaw"))

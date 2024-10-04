@@ -42,7 +42,7 @@ import samples.ec01.utils.Consts;
 		displayName = "カートに入れるWebAPI", 
 		accepts = RequestType.REST_JSON, 
 		methods = MethodType.POST, 
-		privilaged = true, 
+		privileged = true, 
 		synchronizeOnSession = true,
 		restJson = @RestJson(parameterName = "param"), 
 		results = InputCartInfoCommand.RESULT_TOTAL_AMOUNT)

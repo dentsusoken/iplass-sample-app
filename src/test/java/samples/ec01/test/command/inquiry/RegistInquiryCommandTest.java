@@ -20,7 +20,7 @@
 
 package samples.ec01.test.command.inquiry;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
 
@@ -30,24 +30,22 @@ import org.iplass.mtp.command.beanmapper.MappingResult;
 import org.iplass.mtp.entity.EntityManager;
 import org.iplass.mtp.entity.SelectValue;
 import org.iplass.mtp.entity.query.Query;
-import org.iplass.mtp.test.MTPJUnitTestRule;
+import org.iplass.mtp.test.MTPJUnitTestExtension;
 import org.iplass.mtp.test.MTPTest;
 import org.iplass.mtp.test.NoAuthUser;
 import org.iplass.mtp.test.Rollback;
 import org.iplass.mtp.test.TestRequestContext;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import samples.ec01.entity.Inquiry;
 import samples.ec01.enums.InquiryStatus;
 
 
-public class RegistInquiryCommandTest {
+@ExtendWith(MTPJUnitTestExtension.class)
+class RegistInquiryCommandTest {
 
 	static final String COMMAND_NAME = "samples/ec01/inquiry/RegistInquiryCommand";
-
-	@Rule
-	public MTPJUnitTestRule rule = new MTPJUnitTestRule();
 
 	/**
 	 * <pre>
@@ -57,7 +55,7 @@ public class RegistInquiryCommandTest {
 	@Test
 	@NoAuthUser
 	@Rollback
-	public void testRegist() {
+	void testRegist() {
 		TestRequestContext req = new TestRequestContext();
 		req.setParam("mail", "testXyz123@test.co.jp");
 		req.setParam("content", "テスト問い合わせ内容");
@@ -84,9 +82,9 @@ public class RegistInquiryCommandTest {
 		});
 	}
 
-	@Test(expected = MappingException.class)
+	@Test
 	@NoAuthUser
-	public void testWithBlankValue() {
+	void testWithBlankValue() {
 		TestRequestContext req = new TestRequestContext();
 		req.setParam("mail", "");
 		req.setParam("content", "");
@@ -97,6 +95,7 @@ public class RegistInquiryCommandTest {
 
 		try {
 			MTPTest.invokeCommand(COMMAND_NAME, req);
+			fail();
 		} catch (MappingException e) {
 			MappingResult res = e.getResult();
 			assertEquals(6, res.getErrors().size());
@@ -124,16 +123,13 @@ public class RegistInquiryCommandTest {
 			errMsg = res.getError("firstNameKana").getErrorMessages();
 			assertEquals(1, errMsg.size());
 			assertEquals("値を入力してください。", errMsg.get(0));
-
-			throw e;
 		}
 
-		assertFalse(true);
 	}
 
-	@Test(expected = MappingException.class)
+	@Test
 	@NoAuthUser
-	public void testWithInvalidValue() {
+	void testWithInvalidValue() {
 		TestRequestContext req = new TestRequestContext();
 		req.setParam("mail", "test.co.jp");
 		req.setParam("content", "テスト問い合わせ内容");
@@ -144,6 +140,7 @@ public class RegistInquiryCommandTest {
 
 		try {
 			MTPTest.invokeCommand(COMMAND_NAME, req);
+			fail();
 		} catch (MappingException e) {
 			MappingResult res = e.getResult();
 			assertEquals(3, res.getErrors().size());
@@ -159,10 +156,7 @@ public class RegistInquiryCommandTest {
 			errMsg = res.getError("firstNameKana").getErrorMessages();
 			assertEquals(1, errMsg.size());
 			assertEquals("全角カタカナを入力してください。", errMsg.get(0));
-
-			throw e;
 		}
 
-		assertFalse(true);
 	}
 }

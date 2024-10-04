@@ -45,7 +45,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/cart/updateCartInfo", 
 		displayName = "カート情報更新アクション", 
-		privilaged = true,
+		privileged = true,
 		synchronizeOnSession = true,
 		result = @Result(
 				type = Type.REDIRECT, 

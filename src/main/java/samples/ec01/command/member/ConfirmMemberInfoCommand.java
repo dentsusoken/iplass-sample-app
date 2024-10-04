@@ -22,7 +22,7 @@ package samples.ec01.command.member;
 
 import java.util.List;
 
-import javax.validation.groups.Default;
+import jakarta.validation.groups.Default;
 
 import org.iplass.gem.command.Constants;
 import org.iplass.mtp.command.Command;
@@ -46,7 +46,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/member/confirmMemberInfo", 
 		displayName = "会員情報確認アクション", 
-		privilaged = true, 
+		privileged = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 
 				consume = true, 

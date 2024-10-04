@@ -23,7 +23,7 @@
 <%@ page import="samples.ec01.utils.Consts" %>
 <%@ page import="samples.ec01.entity.Product"%>
 <%@ page import="samples.ec01.bean.CartBean" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
 
 <div class="row">
@@ -44,7 +44,7 @@
 	if( cartBean == null || cartBean.getCartItems().size() == 0) {
 %>
 <div class="row cart-table">
-	<div class="col-12 text-left">
+	<div class="col-12 text-start">
 		<p>
 			${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.emptyMsg.p1')}
 		</p>
@@ -61,11 +61,11 @@
 	<div class="row cart-table">
 	    <div class="col-12 d-none d-md-block">
 	        <div class="row">
-	            <div class="col-md-3 font-weight-bold text-center">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.product')}</div>
-	            <div class="col-md-3 font-weight-bold"></div>
-	            <div class="col-md-2 font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price')}</div>
-	            <div class="col-md-2 font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity')}</div>
-	            <div class="col-md-2 font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.subtotal')}</div>
+	            <div class="col-md-3 fw-bold text-center">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.product')}</div>
+	            <div class="col-md-3 fw-bold"></div>
+	            <div class="col-md-2 fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price')}</div>
+	            <div class="col-md-2 fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity')}</div>
+	            <div class="col-md-2 fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.subtotal')}</div>
 	        </div>
 	    </div>
 	    <div class="col-12">
@@ -74,14 +74,14 @@
 		        <c:forEach var="it" items="${cartBean.cartItems}" varStatus="stat">
 			        <c:set var="product" value="${productMap[it.productId]}" scope="page" />
 			        <div class="row mb-4">
-			            <div class="col-12 col-md-3 text-center text-md-left cart-table-item">
+			            <div class="col-12 col-md-3 text-center text-md-start cart-table-item">
 			                <div class="w-100">
 			                    <a class="img-fluid" href="${URLHelper.getProductDetailPath(it.productId)}">
 			                        <img src="${URLHelper.getProductImageResource(product, Product.PRODUCT_IMG)}" alt="" class="img-thumbnail w-100">
 			                    </a>
 			                </div>
 			            </div>
-			            <div class="col-12 col-md-3 text-center text-md-left cart-table-item">
+			            <div class="col-12 col-md-3 text-center text-md-start cart-table-item">
 			                <div class="w-100">
 			                    <h6>${m:esc(product.name)}</h6>
 			                    <p>
@@ -92,18 +92,18 @@
 			                </div>
 			            </div>
 			            <div class="col-3 d-block d-md-none cart-table-item">
-			                <p class="w-100 font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price')}</p>
+			                <p class="w-100 fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.price')}</p>
 			            </div>
 			            <div class="col-8 col-md-2 cart-table-item">
 			                <p class="w-100">${m:esc(product.price)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}</p>
 			            </div>
 			            <div class="col-3 d-block d-md-none cart-table-item">
-			                <p class="w-100 font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity')}</p>
+			                <p class="w-100 fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.quantity')}</p>
 			            </div>
 			            <div class="col-8 col-md-2 cart-table-item clearfix">
 			            	<m:bind prop="cartItems[${stat.index}].value">
 				                <div class="w-100">
-				                    <input type="text" class="form-control float-right" name="${name}" value="${value}" cart-data="value">
+				                    <input type="text" class="form-control float-end" name="${name}" value="${value}" cart-data="value">
 				                </div>
 			                </m:bind>
 			                <m:bind prop="cartItems[${stat.index}].productId">
@@ -111,7 +111,7 @@
 			                </m:bind>
 			            </div>
 			            <div class="col-3 d-block d-md-none cart-table-item">
-			                <p class="w-100 font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total')}</p>
+			                <p class="w-100 fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total')}</p>
 			            </div>
 			            <div class="col-8 col-md-2 cart-table-item">
 			                <p class="w-100">${m:esc(product.price * it.value)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}</p>
@@ -123,8 +123,8 @@
 	    </div>
 	</div>
 	<div class="row mt-3">
-	    <div class="col-md-12 text-center text-md-right">
-	        <p class="font-weight-bold">
+	    <div class="col-md-12 text-center text-md-end">
+	        <p class="fw-bold">
 	        	${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.total')}：&nbsp;
 	        	${m:esc(cartBean.totalPrice)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
 	        </p>
@@ -138,7 +138,7 @@
 	</div>
 </form>
 <div class="row mt-3">
-    <div class="col-md-12 text-center text-md-right">
+    <div class="col-md-12 text-center text-md-end">
         <a class="btn btn-dark btn-lg" href="${m:tcPath()}/samples/ec01/member/login" role="button">
         	${m:rs('iplass-wtp-messages', 'samples.ec01.cart.info.checkOut')}
         </a>

@@ -1,18 +1,16 @@
-apply plugin: 'java'
-apply plugin: 'war'
-apply plugin: 'eclipse-wtp'
+plugins {
+	id 'java'
+	id 'war'
+	id 'eclipse-wtp'
+	id 'org.iplass.dev' version '1.0.0'
+}
 
 ext {
-	javaVersion = JavaVersion.VERSION_1_8
+	javaVersion = JavaVersion.VERSION_21
 }
 
 repositories {
 	mavenCentral()
-
-	maven {
-		// for jasper reports
-		url 'https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts/'
-	}
 
 	if (project.hasProperty('iPLAssMavenRepoUrl')) {
 		maven {
@@ -42,69 +40,65 @@ dependencies {
 	// GoogleCloudを利用する場合は以下のコメントアウトを外してください。
 //	runtimeOnly 'org.iplass:iplass-googlecloud'
 
-	//provided JakartaEE8 apis
-	//Servlet
-	compileOnly 'jakarta.servlet:jakarta.servlet-api:4.0.4'
-	//JSP
-	compileOnly 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:2.3.6'
-	//Expression Language
-	compileOnly 'jakarta.el:jakarta.el-api:3.0.3'
-	//jstl
-	compileOnly 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:1.2.7'
-	//for jstl tld file resolve
-	compileOnly group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '1.2.6', transitive : false
-	//JAX-RS
-	compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:2.1.6'
-	//Common Annotations for the Java Platform
-	compileOnly 'jakarta.annotation:jakarta.annotation-api:1.3.5'
-	//java mail
-	compileOnly 'jakarta.mail:jakarta.mail-api:1.6.5'
-	//Bean validation
-	compileOnly group: 'jakarta.validation', name: 'jakarta.validation-api', version: '2.0.2'
+	// provided JakartaEE 10 apis
+	// Jakarta Servlet
+	providedCompile 'jakarta.servlet:jakarta.servlet-api:6.0.0'
+	// Jakarta JSP
+	providedCompile 'jakarta.servlet.jsp:jakarta.servlet.jsp-api:3.1.1'
+	// Jakarta EL
+	providedCompile 'jakarta.el:jakarta.el-api:5.0.0'
+	
+	// Jakarta Annotations
+	compileOnly 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+	// Jakarta Activation
+	compileOnly 'jakarta.activation:jakarta.activation-api:2.1.3'
+	// Jakarta jstl
+	compileOnly 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+	// Jakarta rest
+	compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
+	// Jakarta Mail
+	compileOnly 'jakarta.mail:jakarta.mail-api:2.1.3'
+	// Jakarta Validation
+	compileOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
+	// Jakarta xml binding
+	compileOnly 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.2'
 
-	//javax activation for java11
-	compileOnly group: 'jakarta.activation', name: 'jakarta.activation-api', version: '1.2.2'
-
-	//JAXB for java11
-	compileOnly group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.3'
-
-	//if your app server is tomcat 9.0, use this
-	//jstl runtime
-	runtimeOnly group: 'org.glassfish.web', name: 'jakarta.servlet.jsp.jstl', version: '1.2.6'
-
-	//java mail runtime
-	runtimeOnly group: 'com.sun.mail', name: 'jakarta.mail', version: '1.6.5'
-
-	//Bean validation runtime
-	runtimeOnly group: 'jakarta.validation', name: 'jakarta.validation-api', version: '2.0.2'
-	runtimeOnly group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.1.5.Final'
-	runtimeOnly group: 'org.glassfish', name: 'jakarta.el', version: '3.0.3'
-
-	//JAX-RS runtime
-	runtimeOnly platform('org.glassfish.jersey:jersey-bom:2.31')
+	// Jakarta Activation runtime
+	runtimeOnly 'org.eclipse.angus:angus-activation:2.0.2'
+	// Jakarta jstl runtime
+	runtimeOnly 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+	runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'
+	// Jakarta rest runtime
+	runtimeOnly platform('org.glassfish.jersey:jersey-bom:3.1.7')
 	runtimeOnly 'org.glassfish.jersey.containers:jersey-container-servlet'
+	runtimeOnly 'org.glassfish.jersey.media:jersey-media-jaxb'
 	runtimeOnly 'org.glassfish.jersey.media:jersey-media-json-jackson'
 	runtimeOnly 'org.glassfish.jersey.media:jersey-media-multipart'
 	runtimeOnly 'org.glassfish.jersey.inject:jersey-hk2'
-	runtimeOnly 'com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider'
+	runtimeOnly 'com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider'
+	// Jakarta Mail runtime
+	runtimeOnly 'org.eclipse.angus:angus-mail:2.0.3'
+	// Jakarta Validation runtime
+	runtimeOnly 'jakarta.validation:jakarta.validation-api:3.0.2'
+	runtimeOnly 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+	// Jakarta xml binding runtime
+	runtimeOnly 'org.glassfish.jaxb:jaxb-runtime:4.0.5'
 
-	//JAXB runtime for java11
-	runtimeOnly group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '2.3.3'
-	runtimeOnly group: 'org.glassfish.jaxb', name: 'jaxb-runtime', version: '2.3.3'
-
-	//JAF runtime for java11
-	runtimeOnly group: 'com.sun.activation', name: 'jakarta.activation', version: '1.2.2'
-
-	testImplementation 'junit:junit:4.12'
+	// NOTE: Bundled with tomcat, required for batch.
+	// Jakarta EL runtime
+	runtimeOnly 'org.glassfish.expressly:expressly:5.0.0'
 
 	testImplementation 'org.iplass:iplass-test'
+	testImplementation platform('org.junit:junit-bom:5.10.2')
+	testImplementation 'org.junit.jupiter:junit-jupiter'
 
 	// 以下のJDBCドライバはテナント作成ツール(runTenantBatchタスク)の実行に必要となります。
 	// 実行する場合は使用するJDBCドライバのコメントアウトを外してください。
-	// OracleのJDBCドライバについては'lib/jdbc'に配置してください。
-//	providedRuntime 'mysql:mysql-connector-java:8.0.21'
-//	providedRuntime 'org.postgresql:postgresql:42.2.16'
-//	providedRuntime 'com.microsoft.sqlserver:mssql-jdbc:8.2.2.jre8'
+	// Maven Cetnral Repository に登録されていないJDBCドライバについては'lib/jdbc'に配置してください。
+//	providedRuntime 'com.mysql:mysql-connector-j:9.0.0'
+//	providedRuntime 'org.postgresql:postgresql:42.7.3'
+//	providedRuntime 'com.microsoft.sqlserver:mssql-jdbc:12.6.3.jre11'
+//	providedRuntime 'com.oracle.database.jdbc:ojdbc8:23.4.0.24.05'
 
 	providedRuntime fileTree('lib').include('**/*.jar')
 }
@@ -114,9 +108,16 @@ java {
 	targetCompatibility = javaVersion
 }
 
+tasks.withType(AbstractCompile) {
+	options.encoding = 'UTF-8'
+}
+
+test {
+	useJUnitPlatform()
+}
+
 eclipse {
 	project {
-
 		natures 'org.eclipse.jdt.core.javanature',
 			'org.eclipse.wst.common.project.facet.core.nature',
 			'org.eclipse.wst.common.modulecore.ModuleCoreNature',
@@ -125,17 +126,16 @@ eclipse {
 	}
 
 	wtp {
-
 		facet {
 			facets = []
 			facet name: 'jst.java', version: javaVersion
-			facet name: 'jst.web', version: '4.0'
+			facet name: 'jst.web', version: '6.0'
 			facet name: 'wst.jsdt.web', version: '1.0'
 
-			//set Runtime to tomcat v9.0
+			//set Runtime to tomcat v10.1
 			file {
 				withXml {
-					it.asNode().appendNode('runtime', [name: 'Apache Tomcat v9.0'])
+					it.asNode().appendNode('runtime', [name: 'Apache Tomcat v10.1'])
 				}
 			}
 		}
@@ -146,12 +146,26 @@ eclipse {
 	}
 }
 
-tasks.withType(AbstractCompile) {
-	options.encoding = 'UTF-8'
-}
-
 // テナント作成ツール実行
 task runTenantBatch(type: JavaExec, group: 'application', description : 'execute tenant batch.') {
 	mainClass = "org.iplass.mtp.tools.batch.tenant.TenantBatch"
 	classpath = sourceSets.main.runtimeClasspath
 }
+
+// ===============================
+//  org.iplass.dev プラグイン設定
+// ===============================
+//configure(iplass) {
+//	// required
+//	tenantId = TENANT_ID // change your tenant id
+//
+//	// optional
+//	//serviceConfig = '/mtp-service-config.xml'
+//	//language = 'system'
+//	//classpath = sourceSets.main.runtimeClasspath
+//}
+//
+//metaSyncRdbToFile {
+//	// RDB管理しているメタデータパスを入力する。
+//	source = ['/entity/*', '/staticresource/*']
+//}

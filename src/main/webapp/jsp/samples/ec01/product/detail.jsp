@@ -24,7 +24,7 @@
 <%@ page import="java.text.DecimalFormat" %>
 <%@ page import="org.iplass.mtp.util.StringUtil" %>
 <%@ page import="org.iplass.mtp.entity.Entity" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
 
 <%
@@ -48,13 +48,13 @@
 		</nav>
 	</div>
 </div>
-<div class="row text-center text-md-left">
+<div class="row text-center text-md-start">
 	<div class="col-sm-12 col-md-5">
 		<img src="${URLHelper.getProductImageResource(productInfo, Product.PRODUCT_IMG)}" class="img-thumbnail w-100">
 	</div>
 	<div class="col-sm-12 col-md-7">
 		<h4>${m:esc(productInfo.name)}</h4>
-		<p class="font-weight-bold">
+		<p class="fw-bold">
 			${m:rs('iplass-wtp-messages', 'samples.ec01.product.detail.price')}：
 			<span class="all-price">
 				${m:esc(productInfo.price)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
@@ -68,7 +68,7 @@
 		<!-- 商品サブ情報 -->
 		<p class="h5">
 			<c:forEach var="sub" items="${subInfoList}">
-				<span class="badge badge-info" title="${sub.description}">${m:esc(sub.name)}</span>
+				<span class="badge bg-info" title="${sub.description}">${m:esc(sub.name)}</span>
 			</c:forEach>
 		</p>
 		<div cart-data="addToCart">

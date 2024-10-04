@@ -23,7 +23,7 @@
 <%@ page import="samples.ec01.entity.Shop"%>
 <%@ page import="samples.ec01.entity.TradeLaw"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <div class="row">
     <div class="col-12">
@@ -57,7 +57,7 @@
             <div class="card col-12 bg-light">
                 <div class="card-body">
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.dealer')}
                         	</span>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.administrator')}
                         	</span>
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.postNo')}
                         	</span>
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.address')}
                         	</span>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.tel')}
                         	</span>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.fax')}
                         	</span>
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.mail')}
                         	</span>
@@ -135,13 +135,13 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold"><span class="text-muted">URL</span></div>
+                        <div class="col-12 col-md-4 fw-bold"><span class="text-muted">URL</span></div>
                         <div class="col-12 col-md-8">
                         	${m:esc(tradeLaw.url)}
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.feeRequired')}
                         	</span>
@@ -149,7 +149,7 @@
                         <div class="col-12 col-md-8">${m:esc(tradeLaw.feeRequired)}</div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.orderingMethod')}
                         	</span>
@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.paymentMethod')}
                         	</span>
@@ -167,7 +167,7 @@
                         <div class="col-12 col-md-8">${m:esc(tradeLaw.howToPayment)}</div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.paymentDate')}
                         	</span>
@@ -175,7 +175,7 @@
                         <div class="col-12 col-md-8">${m:esc(tradeLaw.paymentDeadline)}</div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.deliveryTime')}
                         	</span>
@@ -183,7 +183,7 @@
                         <div class="col-12 col-md-8">${m:esc(tradeLaw.deliveryTime)}</div>
                     </div>
                     <div class="row mt-3 border-bottom">
-                        <div class="col-12 col-md-4 font-weight-bold">
+                        <div class="col-12 col-md-4 fw-bold">
                         	<span class="text-muted">
                         		${m:rs('iplass-wtp-messages', 'samples.ec01.shop.tradeLaw.exchanged')}
                         	</span>

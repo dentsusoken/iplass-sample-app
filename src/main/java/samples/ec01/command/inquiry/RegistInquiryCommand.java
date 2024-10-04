@@ -20,7 +20,7 @@
 
 package samples.ec01.command.inquiry;
 
-import javax.validation.groups.Default;
+import jakarta.validation.groups.Default;
 
 import org.iplass.gem.command.Constants;
 import org.iplass.mtp.command.Command;
@@ -46,7 +46,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/inquiry/inquiry", 
 		displayName = "お問合せ画面表示", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/inquiry/inquiry"),
@@ -54,7 +54,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/inquiry/doInquiry", 
 		displayName = "お問合せ登録", 
-		privilaged = true, 
+		privileged = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 
 				consume = true, 

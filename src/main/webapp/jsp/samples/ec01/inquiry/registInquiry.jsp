@@ -25,7 +25,7 @@
 <%@ page import="samples.ec01.bean.InquiryBean" %>
 <%@ page import="samples.ec01.command.inquiry.RegistInquiryCommand" %>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%
 InquiryBean inquiryBean = (InquiryBean)request.getAttribute(RegistInquiryCommand.RESULT_INQUIRY_BEAN);
 if (inquiryBean == null) {

@@ -38,7 +38,7 @@ import samples.ec01.entity.Product;
 @ActionMapping(
 		name = "samples/ec01/search/search", 
 		displayName = "検索画面表示", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/search/search"),
@@ -46,7 +46,7 @@ import samples.ec01.entity.Product;
 @ActionMapping(
 		name = "samples/ec01/search/doSearch", 
 		displayName = "検索用アクション", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/search/searchResult"))

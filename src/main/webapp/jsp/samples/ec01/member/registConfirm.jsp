@@ -21,7 +21,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="org.iplass.mtp.web.template.TemplateUtil"%>
 <%@ page import="samples.ec01.utils.Consts" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
 
 <div class="row">
@@ -62,41 +62,41 @@
                     <div class="card-body">
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId')}</span>
+                            	<span class="text-muted fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.userId')}</span>
                             </div>
                             <div class="col-12 col-md-8">${m:esc(userBean.userId)}</div>
                         </div>
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullName')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullName')}</span>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyName')}</span>
                             	&nbsp;${m:esc(userBean.familyName)}
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstName')}</span>
                             	&nbsp;${m:esc(userBean.firstName)}
                             </div>
                         </div>
                         <% if (Consts.LANGUAGE_JA.equals(TemplateUtil.getLanguage()) || TemplateUtil.getLanguage() == null) { %>
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullNameKana')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.registConfirm.fullNameKana')}</span>
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.familyNameKana')}</span>
                             	&nbsp;${m:esc(userBean.familyNameKana)}
                             </div>
                             <div class="col-12 col-md-3">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.firstNameKana')}</span>
                             	&nbsp;${m:esc(userBean.firstNameKana)}
                             </div>
                         </div>
                         <% } %>
                         <div class="row mt-3 border-bottom">
                             <div class="col-12 col-md-4">
-                            	<span class="text-muted  font-weight-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail')}</span>
+                            	<span class="text-muted  fw-bold">${m:rs('iplass-wtp-messages', 'samples.ec01.member.regist.mail')}</span>
                             </div>
                             <div class="col-12 col-md-8">${m:esc(userBean.mail)}</div>
                         </div>

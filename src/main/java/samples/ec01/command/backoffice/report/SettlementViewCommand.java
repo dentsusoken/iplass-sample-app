@@ -37,7 +37,7 @@ import samples.ec01.dao.EntityDaoHelper;
 @ActionMapping(
 		name = "samples/ec01/backoffice/report/settlement",
 		displayName = "請求書",
-		privilaged = false,
+		privileged = false,
 		result = @Result(
 				type = Type.TEMPLATE,
 				value = "samples/ec01/backoffice/report/settlement"))

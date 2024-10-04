@@ -51,7 +51,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/shipping/doOrder", 
 		displayName = "注文処理", 
-		privilaged = true, 
+		privileged = true, 
 		synchronizeOnSession = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 

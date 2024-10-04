@@ -39,7 +39,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/news/newInfo", 
 		displayName = "新着情報一覧", 
-		privilaged = true, 
+		privileged = true, 
 		result = @Result(
 				type = Type.TEMPLATE, 
 				value = "samples/ec01/news/newInfo"))

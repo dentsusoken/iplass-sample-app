@@ -21,7 +21,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="samples.ec01.bean.ui.Pagination" %>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <% 
 	Pagination pagination = (Pagination)request.getAttribute("pagination");
@@ -40,7 +40,7 @@
 		</c:otherwise>
 	</c:choose> 
 				<span aria-hidden="true">&laquo;${m:rs('iplass-wtp-messages', 'samples.ec01.all.pagination.prev')}</span>
-				<span class="sr-only">Previous</span>
+				<span class="visually-hidden">Previous</span>
 			</a>
 	</li>
 <!-- ページ番号 -->
@@ -76,7 +76,7 @@
 		</c:otherwise>
 	</c:choose>
 				<span aria-hidden="true">&laquo;${m:rs('iplass-wtp-messages', 'samples.ec01.all.pagination.next')}</span>
-				<span class="sr-only">Next</span>
+				<span class="visually-hidden">Next</span>
 			</a>
 	</li>
  </ul>

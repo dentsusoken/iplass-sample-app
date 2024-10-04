@@ -21,7 +21,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ page import="samples.ec01.utils.URLHelper"%>
 <%@ page import="samples.ec01.entity.Product"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
 
 <!-- カテゴリ選択されてない場合 -->
@@ -44,8 +44,8 @@
 <div class="row d-none d-md-block">
 	<div class="col-12 clearfix">
 		<span class="h4">${m:esc(categoryName)}</span>
-		<div class="dropdown float-right">
-			<button class="btn btn-outline-dark dropdown-toggle" type="button" id="categoryList" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<div class="dropdown float-end">
+			<button class="btn btn-outline-dark dropdown-toggle" type="button" id="categoryList" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				${m:rs('iplass-wtp-messages', 'samples.ec01.product.category.title') }
 			</button>
 			<div class="dropdown-menu" aria-labelledby="categoryList">

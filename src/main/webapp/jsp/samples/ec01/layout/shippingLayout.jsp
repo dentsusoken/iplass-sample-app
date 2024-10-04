@@ -23,7 +23,7 @@
 <%@ page import="samples.ec01.utils.URLHelper"%>
 <%@ page import="samples.ec01.entity.Product" %>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <!DOCTYPE html>
 <html lang="<%=TemplateUtil.getLanguage() %>">
@@ -49,13 +49,13 @@
                 <p class="h4">${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.title')}</p>
             </div>
             <div class="col-12 d-block d-md-none bg-light pt-3 pr-4 clearfix">
-                <button id="toggle-btn" class="border-0 bg-transparent float-left" type="button" data-toggle="collapse" data-target="#cartTab"
+                <button id="toggle-btn" class="border-0 bg-transparent float-start" type="button" data-bs-toggle="collapse" data-bs-target="#cartTab"
                     aria-controls="cartTab" aria-expanded="false" aria-label="Toggle">
                     <span class="oi oi-cart"></span>
                     ${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.viewCart')}
                     <span class="oi oi-caret-bottom"></span>
                 </button>
-                <p class="float-right">
+                <p class="float-end">
                 	${m:esc(cartBean.totalPrice)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
                 </p>
             </div>
@@ -69,14 +69,14 @@
                                 <td scope="row">
                                     <div style="width:80px; position:relative">
                                         <img src="${URLHelper.getProductImageResource(product, Product.PRODUCT_IMG)}" class="rounded" alt="${product.name}" />
-                                        <span class="badge badge-dark badge-pill">${m:esc(it.value)}</span>
+                                        <span class="badge bg-dark">${m:esc(it.value)}</span>
                                     </div>
                                 </td>
                                 <td>
                                     <p>${m:esc(product.name)}</p>
                                     <p class="cate">${m:esc(product.category.name)}</p>
                                 </td>
-                                <td class="w-25 text-right">
+                                <td class="w-25 text-end">
                                 	${m:esc(product.price*it.value)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
                                 </td>
                             </tr>
@@ -89,7 +89,7 @@
                         <tbody>
                         	<!-- 商品合計 -->
                             <tr>
-                                <td scope="row" class="w-25 text-left">
+                                <td scope="row" class="w-25 text-start">
                                 	${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.subtotal')}
                                 </td>
                                 <td class="w-75">
@@ -97,16 +97,16 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td scope="row" class="w-25 text-left border-top-0">
+                                <td scope="row" class="w-25 text-start border-top-0">
                                 	${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.fee')}
                                 </td>
                                 <td class="w-75 border-top-0">--</td>
                             </tr>
                             <tr>
-                                <td scope="row" class="w-25 text-left h4">
+                                <td scope="row" class="w-25 text-start h4">
                                 	${m:rs('iplass-wtp-messages', 'samples.ec01.layout.shipping.total')}
                                 </td>
-                                <td class="w-75 font-weight-bold h4">
+                                <td class="w-75 fw-bold h4">
                                     ${m:esc(cartBean.totalPrice)}${m:rs('iplass-wtp-messages', 'samples.ec01.all.yen')}
                                 </td>
                             </tr>
@@ -117,7 +117,7 @@
             <div class="col-12 col-md-6 pt-4 custom-form-left-container">
                 <m:renderContent/>
                 <div class="row layout-footer shipping-layout-footer">
-                    <div class="col-12 text-light text-left bg-dark">Copyright（c）2018 MTP Demo Store all rights reserved.</div>
+                    <div class="col-12 text-light text-start bg-dark">Copyright（c）2018 MTP Demo Store all rights reserved.</div>
                 </div>
             </div>
         </div>

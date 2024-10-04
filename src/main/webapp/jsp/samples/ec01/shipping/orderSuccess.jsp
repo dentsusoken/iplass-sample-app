@@ -20,7 +20,7 @@
 
 <%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 <%@ taglib prefix="m" uri="http://iplass.org/tags/mtp"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 
 <div class="row">
     <div class="col-12 d-none d-md-block">
@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="col-12 mt-4 text-center clearfix">
-        <div class="float-md-right">
+        <div class="float-md-end">
             <a class="btn btn-dark" href="${m:tcPath()}/samples/ec01/top">
             	${m:rs('iplass-wtp-messages', 'samples.ec01.shipping.success.return')}
             </a>

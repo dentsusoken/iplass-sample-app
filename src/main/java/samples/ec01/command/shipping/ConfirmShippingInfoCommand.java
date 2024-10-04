@@ -20,7 +20,7 @@
 
 package samples.ec01.command.shipping;
 
-import javax.validation.groups.Default;
+import jakarta.validation.groups.Default;
 
 import org.iplass.gem.command.Constants;
 import org.iplass.mtp.command.Command;
@@ -41,7 +41,7 @@ import samples.ec01.utils.Consts;
 @ActionMapping(
 		name = "samples/ec01/shipping/confirmShippingInfo", 
 		displayName = "配送情報確認画面表示アクション", 
-		privilaged = true, 
+		privileged = true, 
 		tokenCheck = @TokenCheck(
 				executeCheck = true, 
 				consume = true, 
