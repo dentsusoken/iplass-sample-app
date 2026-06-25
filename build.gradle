@@ -94,7 +94,7 @@ dependencies {
 
 	// 以下のJDBCドライバはテナント作成ツール(runTenantBatchタスク)の実行に必要となります。
 	// 実行する場合は使用するJDBCドライバのコメントアウトを外してください。
-	// Maven Cetnral Repository に登録されていないJDBCドライバについては'lib/jdbc'に配置してください。
+	// Maven Central Repository に登録されていないJDBCドライバについては'lib/jdbc'に配置してください。
 //	providedRuntime 'com.mysql:mysql-connector-j:9.7.0'
 //	providedRuntime 'org.postgresql:postgresql:42.7.11'
 //	providedRuntime 'com.microsoft.sqlserver:mssql-jdbc:13.4.0.jre11'
