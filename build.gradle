@@ -5,8 +5,8 @@ plugins {
 	id 'org.iplass.dev' version '1.1.2'
 }
 
-def	javaVersion = JavaVersion.VERSION_21
-def iPLAssMavenRepoUrlProvider = providers.gradleProperty('iPLAssMavenRepoUrl')
+final javaVersion = JavaVersion.VERSION_21
+final iPLAssMavenRepoUrlProvider = providers.gradleProperty('iPLAssMavenRepoUrl')
 
 repositories {
 	mavenCentral()
