@@ -2,12 +2,11 @@ plugins {
 	id 'java'
 	id 'war'
 	id 'eclipse-wtp'
-	id 'org.iplass.dev' version '1.0.0'
+	id 'org.iplass.dev' version '1.1.2'
 }
 
-ext {
-	javaVersion = JavaVersion.VERSION_21
-}
+final javaVersion = JavaVersion.VERSION_21
+final iPLAssMavenRepoUrlProvider = providers.gradleProperty('iPLAssMavenRepoUrl')
 
 repositories {
 	mavenCentral()
@@ -17,9 +16,9 @@ repositories {
 		url = uri('https://jaspersoft.jfrog.io/jaspersoft/third-party-ce-artifacts')
 	}
 
-	if (project.hasProperty('iPLAssMavenRepoUrl')) {
+	if (iPLAssMavenRepoUrlProvider.isPresent()) {
 		maven {
-			url iPLAssMavenRepoUrl
+			url = uri(iPLAssMavenRepoUrlProvider.get())
 		}
 	}
 }
@@ -34,7 +33,7 @@ dependencies {
 	runtimeOnly 'org.iplass:iplass-admin'
 	runtimeOnly 'org.iplass:iplass-tools'
 
-	providedRuntime group: 'org.iplass', name: 'iplass-tools-batch', version: iPLAssVersion, transitive: false
+	providedRuntime ("org.iplass:iplass-tools-batch:${iPLAssVersion}") { transitive = false }
 
 	// Infinispanを利用する場合は以下のコメントアウトを外してください。
 //	runtimeOnly 'org.iplass:iplass-infinispan'
